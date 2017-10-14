@@ -1,0 +1,54 @@
+﻿<Window x:Class="Media.WPF.Ex01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Media.WPF.Ex01"
+        mc:Ignorable="d"
+        Title="Media Player" Height="360" Width="525">
+
+    <TabControl Margin="5">
+        <TabItem Name="musicTabItem" Header="Music">
+            <Grid>
+                <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Singer}"/>
+                                <TextBlock Text=" - "/>
+                                <TextBlock Text="{Binding Path=Title}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Label FontSize="20" FontWeight="Bold"  HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top">
+                    <TextBlock TextDecorations="Underline" Text="Selected Song"/>
+                </Label>
+                
+                
+            </Grid>
+        </TabItem>
+        <TabItem Name="moviesTabItem" Header="Movies">
+            <Grid>
+                <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Title}"/>
+                                <TextBlock Text=" - "/>
+                                <TextBlock Text="{Binding Path=Director}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Label FontSize="20" FontWeight="Bold"  HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top">
+                    <TextBlock TextDecorations="Underline" Text="Selected Movie"/>
+                </Label>
+                
+                
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

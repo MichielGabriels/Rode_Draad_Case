@@ -1,0 +1,40 @@
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Player.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Utils.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\NAudio.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Player.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\Media.Utils.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Controller.Ex01\bin\Debug\NAudio.xml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Player.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Utils.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\NAudio.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Player.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\Media.Utils.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\bin\Debug\NAudio.xml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.DataModel.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Player.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Utils.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\NAudio.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Player.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\Media.Utils.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\bin\Debug\NAudio.xml
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csproj.CoreCompileInputs.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb

@@ -1,0 +1,11 @@
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Utils\bin\Debug\Media.Utils.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Utils\bin\Debug\Media.Utils.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Utils\obj\Debug\Media.Utils.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Utils\obj\Debug\Media.Utils.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.Utils\obj\Debug\Media.Utils.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\bin\Debug\Media.Utils.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\bin\Debug\Media.Utils.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.csprojResolveAssemblyReference.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.csproj.CoreCompileInputs.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.pdb

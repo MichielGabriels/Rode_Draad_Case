@@ -1,0 +1,67 @@
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\MainWindow.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\VideoPlayer.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\App.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.lref
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe.config
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.Player.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\NAudio.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\Media.Player.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\bin\Debug\NAudio.xml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\MainWindow.baml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\VideoPlayer.baml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.g.resources
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.Properties.Resources.resources
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.GenerateResource.Cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.exe
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe.config
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.exe
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.Player.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\NAudio.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\Media.Player.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\bin\Debug\NAudio.xml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\MainWindow.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\VideoPlayer.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\App.g.cs
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.lref
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\MainWindow.baml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\VideoPlayer.baml
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.g.resources
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.Properties.Resources.resources
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.GenerateResource.Cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe.config
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.exe
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.WPF.Ex01.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.DataModel.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.Player.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\NAudio.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\Media.Player.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\bin\Debug\NAudio.xml
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csprojResolveAssemblyReference.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\MainWindow.g.cs
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\VideoPlayer.g.cs
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\App.g.cs
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01_MarkupCompile.lref
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\MainWindow.baml
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\VideoPlayer.baml
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.g.resources
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.Properties.Resources.resources
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.GenerateResource.Cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.CoreCompileInputs.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.exe
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.pdb

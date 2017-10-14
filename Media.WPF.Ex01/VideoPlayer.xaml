@@ -1,0 +1,24 @@
+﻿<Window x:Class="Media.WPF.Ex01.VideoPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Media.WPF.Ex01"
+        mc:Ignorable="d"
+        Title="VideoPlayer" MinWidth="250" MinHeight="250" Height="300" Width="300" Closed="CleanUp">
+    <Grid>
+        <MediaElement Name="VideoMediaElement" HorizontalAlignment="Center" VerticalAlignment="Top" LoadedBehavior="Manual" MouseLeftButtonUp="VideoMediaElement_MouseLeftButtonUp" Stretch="Uniform" MediaEnded="VideoMediaElement_MediaEnding" MediaOpened="VideoMediaElement_MediaOpened"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Slider x:Name="SeekSlider" HorizontalAlignment="Center" FontStretch="Medium" Width="250" ValueChanged="SeekSlider_ValueChanged"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button x:Name="PlayButton" Content="Play" Width="50" Click="PlayButton_Click"/>
+                <Button x:Name="PauseButton" Content="Pause" Width="50" Click="PauseButton_Click"/>
+                <Button x:Name="StopSlider" Content="Stop" Width="50" Click="StopButton_Click"/>
+                <Slider x:Name="VolumeSlider" Width="60" Maximum="1" LargeChange="0.1" SmallChange="0.01" Value="0.5" ValueChanged="VolumeSlider_ValueChanged"/>
+                <Button x:Name="fullscreenButton" Content="Fullscreen" Width="50" Click="FullscreenButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

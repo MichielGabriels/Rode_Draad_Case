@@ -1,0 +1,10 @@
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.DataModel\bin\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.DataModel\bin\Debug\Media.DataModel.pdb
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.DataModel\obj\Debug\Media.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.DataModel\obj\Debug\Media.DataModel.dll
+C:\Users\jonasa\Source\Repos\Opdracht PXL\Opdracht PXL\Media.DataModel\obj\Debug\Media.DataModel.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.DataModel\bin\Debug\Media.DataModel.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.DataModel\bin\Debug\Media.DataModel.pdb
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.DataModel\obj\Debug\Media.DataModel.csproj.CoreCompileInputs.cache
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.DataModel\obj\Debug\Media.DataModel.dll
+C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.DataModel\obj\Debug\Media.DataModel.pdb
