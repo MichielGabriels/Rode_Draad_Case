@@ -18,7 +18,7 @@
             </MenuItem>
         </Menu>
 
-        <TabControl DockPanel.Dock="Bottom" Margin="5">
+        <TabControl DockPanel.Dock="Bottom" Margin="5" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Name="musicTabItem" Header="Music">
                 <Grid>
                     <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">

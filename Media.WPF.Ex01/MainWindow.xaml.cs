@@ -26,6 +26,7 @@ namespace Media.WPF.Ex01
     {
         private MusicController _musicController;
         private MovieController _movieController;
+        private MediaController _activeController;
 
         public MainWindow()
         {
@@ -73,6 +74,38 @@ namespace Media.WPF.Ex01
         {
             _musicController.Dispose();
             _movieController.Dispose();
+        }
+
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (musicTabItem.IsSelected)
+            {
+                _activeController = _musicController;
+                this.LoadMusicData();
+            }
+            else if (moviesTabItem.IsSelected)
+            {
+                _activeController = _movieController;
+                this.LoadMovieData();
+            }
+
+            this.ClearSelected();
+        }
+
+        private void LoadMusicData()
+        {
+            musicListBox.Items.Refresh();
+        }
+
+        private void LoadMovieData()
+        {
+            movieListBox.Items.Refresh();
+        }
+
+        private void ClearSelected()
+        {
+            _activeController.ClearSelected();
+            this.SetMusicPlayState();
         }
     }
 }
