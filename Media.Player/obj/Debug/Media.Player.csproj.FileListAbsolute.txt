@@ -17,3 +17,12 @@ C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Player\o
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Player\obj\Debug\Media.Player.csproj.CoreCompileInputs.cache
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Player\obj\Debug\Media.Player.dll
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Player\obj\Debug\Media.Player.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\Media.Player.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\Media.Player.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\Media.DataModel.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\NAudio.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\Media.DataModel.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\NAudio.xml
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.csprojResolveAssemblyReference.cache
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.pdb

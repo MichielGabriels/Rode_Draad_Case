@@ -103,6 +103,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Media.Controller.Ex01\Media.Controller.Ex01.csproj">
+      <Project>{13ac3d08-e425-4ee6-924a-c49c3cceba3e}</Project>
+      <Name>Media.Controller.Ex01</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Media.DataModel\Media.DataModel.csproj">
       <Project>{cfed4f3a-24fd-4064-b139-b61d086ffe32}</Project>
       <Name>Media.DataModel</Name>

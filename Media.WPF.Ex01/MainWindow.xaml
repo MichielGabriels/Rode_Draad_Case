@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Media.WPF.Ex01"
         mc:Ignorable="d"
-        Title="Media Player" Height="360" Width="525">
+        Title="Media Player" Height="360" Width="525" Closed="Cleanup">
 
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="_File">
-                <MenuItem Header="_Close"/>
+                <MenuItem Header="_Close" Click="OnCloseEvent"/>
             </MenuItem>
 
             <MenuItem Header="_Help">
