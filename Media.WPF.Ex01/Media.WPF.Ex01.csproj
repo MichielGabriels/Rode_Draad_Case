@@ -115,6 +115,10 @@
       <Project>{f360b8fa-e697-4128-9197-25aadcf64d72}</Project>
       <Name>Media.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Media.Utils\Media.Utils.csproj">
+      <Project>{95de6325-a769-4cc8-afbc-6d498d065935}</Project>
+      <Name>Media.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

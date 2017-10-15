@@ -1,6 +1,7 @@
 ﻿using Media.Controller.Ex01;
 using Media.DataModel;
 using Media.Player;
+using Media.Utils;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,8 @@ namespace Media.WPF.Ex01
         private MusicController _musicController;
         private MovieController _movieController;
         private MediaController _activeController;
+
+        private byte[] _newFile;
 
         public MainWindow()
         {
@@ -116,6 +119,29 @@ namespace Media.WPF.Ex01
                 this.SetMovieForm();
             }
         }
+
+        private void AddFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false;
+            dialog.Filter = _activeController.FileFilter();
+            dialog.ShowDialog();
+
+            if (dialog.FileName != "")
+            {
+                var file = LoadConvert.ImportFile(dialog.FileName);
+                _newFile = file;
+            }
+
+            if (_activeController.GetType() == typeof(MusicController))
+            {
+                checkBoxMusicFilePresent.IsChecked = _newFile != null;
+            }
+            else
+            {
+                checkBoxMovieFilePresent.IsChecked = _newFile != null;
+            }
+        }
         #endregion
 
         #region Other methods
@@ -148,14 +174,14 @@ namespace Media.WPF.Ex01
             if (_musicController.Selected != null)
             {
                 buttonAddMusicFile.IsEnabled = true;
-                checkBoxMusicFilePresent.IsEnabled = _musicController.Selected.File != null;
+                checkBoxMusicFilePresent.IsChecked = _musicController.Selected.File != null || _newFile != null;
                 buttonDeleteSong.IsEnabled = true;
                 buttonAddToPlaylist.IsEnabled = _musicController.Selected.File != null;
             }
             else
             {
                 buttonAddMusicFile.IsEnabled = true;
-                checkBoxMusicFilePresent.IsEnabled = false;
+                checkBoxMusicFilePresent.IsChecked = false;
                 buttonDeleteSong.IsEnabled = false;
                 buttonAddToPlaylist.IsEnabled = false;
 
@@ -178,14 +204,16 @@ namespace Media.WPF.Ex01
             if (_movieController.Selected != null)
             {
                 buttonAddMovieFile.IsEnabled = true;
-                checkBoxMovieFilePresent.IsEnabled = _movieController.Selected.File != null;
+                checkBoxMovieFilePresent.IsChecked = _movieController.Selected.File != null || _newFile != null;
                 buttonDeleteMovie.IsEnabled = true;
+                buttonPlayMovie.IsEnabled = _movieController.Selected.File != null;
             }
             else
             {
                 buttonAddMovieFile.IsEnabled = true;
-                checkBoxMovieFilePresent.IsEnabled = false;
+                checkBoxMovieFilePresent.IsChecked = false;
                 buttonDeleteMovie.IsEnabled = false;
+                buttonPlayMovie.IsEnabled = false;
 
                 textBoxDirector.Text = "";
                 textBoxSongTitle.Text = "";

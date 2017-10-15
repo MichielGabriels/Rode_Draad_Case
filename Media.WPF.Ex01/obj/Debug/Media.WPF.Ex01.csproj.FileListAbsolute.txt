@@ -89,3 +89,5 @@ C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.E
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.GenerateResource.Cache
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.exe
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\bin\Debug\Media.Utils.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.WPF.Ex01\bin\Debug\Media.Utils.pdb
