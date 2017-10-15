@@ -21,7 +21,7 @@
         <TabControl DockPanel.Dock="Bottom" Margin="5" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Name="musicTabItem" Header="Music">
                 <Grid>
-                    <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230" SelectionChanged="MusicListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -40,12 +40,12 @@
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
-                            <TextBox x:Name="textBoxSinger" Width="150" Height="15" Margin="20, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxSinger" Width="150" Height="18" Margin="20, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSongTitle}">Title</Label>
-                            <TextBox x:Name="textBoxSongTitle" Width="150" Height="15" Margin="32, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxSongTitle" Width="150" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
@@ -92,7 +92,7 @@
             </TabItem>
             <TabItem Name="moviesTabItem" Header="Movies">
                 <Grid>
-                    <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230" SelectionChanged="MovieListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -111,12 +111,12 @@
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
-                            <TextBox x:Name="textBoxDirector" Width="150" Height="15" Margin="20, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxDirector" Width="150" Height="18" Margin="20, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxMovieTitle}">Title</Label>
-                            <TextBox x:Name="textBoxMovieTitle" Width="150" Height="15" Margin="32, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxMovieTitle" Width="150" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
