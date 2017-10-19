@@ -216,6 +216,11 @@ namespace Media.WPF.Ex01
                 MessageBox.Show("Please fill in all the fields");
             }
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.ClearSelected();
+        }
         #endregion
 
         #region Other methods
