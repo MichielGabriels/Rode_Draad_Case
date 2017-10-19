@@ -60,7 +60,7 @@
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonAddToPlaylist" Width="160">Add To Playlist</Button>
+                            <Button x:Name="buttonAddToPlaylist" Width="160" IsEnabled="False">Add To Playlist</Button>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
@@ -78,14 +78,14 @@
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
 
-                                    <Button x:Name="buttonPlay" Grid.Column="0" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0">Play</Button>
-                                    <Button x:Name="buttonPause" Grid.Column="1" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0">Pause</Button>
-                                    <Button x:Name="buttonNext" Grid.Column="0" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0">Next</Button>
-                                    <Button x:Name="buttonStop" Grid.Column="1" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0">Stop</Button>
+                                    <Button x:Name="buttonPlay" Grid.Column="0" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0" IsEnabled="False">Play</Button>
+                                    <Button x:Name="buttonPause" Grid.Column="1" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0" IsEnabled="False">Pause</Button>
+                                    <Button x:Name="buttonNext" Grid.Column="0" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0" IsEnabled="False">Next</Button>
+                                    <Button x:Name="buttonStop" Grid.Column="1" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0" IsEnabled="False">Stop</Button>
                                 </Grid>
                             </StackPanel>
 
-                            <Slider x:Name="sliderVolume" VerticalAlignment="Center" Width="100" Margin="5, 20, 0, 0"></Slider>
+                            <Slider x:Name="sliderVolume" VerticalAlignment="Center" Width="100" Margin="5, 20, 0, 0" IsEnabled="False"></Slider>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -131,7 +131,7 @@
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0">Play Movie</Button>
+                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False">Play Movie</Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
