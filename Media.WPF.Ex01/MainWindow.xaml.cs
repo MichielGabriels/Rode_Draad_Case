@@ -142,6 +142,80 @@ namespace Media.WPF.Ex01
                 checkBoxMovieFilePresent.IsChecked = _newFile != null;
             }
         }
+
+        private void MusicSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxSinger.Text != "" && textBoxSongTitle.Text != "")
+            {
+                if (checkBoxMusicFilePresent.IsChecked == false)
+                {
+                    var newSong = new Song()
+                    {
+                        Singer = textBoxSinger.Text,
+                        Title = textBoxSongTitle.Text,
+                        File = _newFile
+                    };
+
+                    _activeController.AddMedia(newSong);
+                }
+                else
+                {
+                    var selectedSong = (Song)_activeController.Selected;
+
+                    if (_newFile == null)
+                    {
+                        _newFile = selectedSong.File;
+                    }
+
+                    _activeController.ClearSelected();
+                    textBoxSinger.Text = "";
+                    textBoxSongTitle.Text = "";
+                }
+
+                musicListBox.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields");
+            }
+        }
+
+        private void MovieSaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBoxDirector.Text != "" && textBoxMovieTitle.Text != "")
+            {
+                if (checkBoxMovieFilePresent.IsChecked == false)
+                {
+                    var newMovie = new Movie()
+                    {
+                        Director = textBoxDirector.Text,
+                        Title = textBoxMovieTitle.Text,
+                        File = _newFile
+                    };
+
+                    _activeController.AddMedia(newMovie);
+                }
+                else
+                {
+                    var selectedMovie = (Movie)_activeController.Selected;
+
+                    if (_newFile == null)
+                    {
+                        _newFile = selectedMovie.File;
+                    }
+
+                    _activeController.ClearSelected();
+                    textBoxDirector.Text = "";
+                    textBoxMovieTitle.Text = "";
+                }
+
+                movieListBox.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all the fields");
+            }
+        }
         #endregion
 
         #region Other methods

@@ -50,11 +50,11 @@
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Button x:Name="buttonAddMusicFile" Click="AddFileButton_Click">Add musicfile</Button>
-                            <CheckBox x:Name="checkBoxMusicFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0">Music File Present</CheckBox>
+                            <CheckBox x:Name="checkBoxMusicFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Music File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
-                            <Button x:Name="buttonSaveSong" Margin="10, 0, 0, 0" Width="60">Save</Button>
+                            <Button x:Name="buttonSaveSong" Margin="10, 0, 0, 0" Width="60" Click="MusicSaveButton_Click">Save</Button>
                             <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60">Delete</Button>
                             <Button x:Name="buttonCancelSong" Margin="10, 0, 0, 0" Width="60">Cancel</Button>
                         </StackPanel>
@@ -121,11 +121,11 @@
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Button x:Name="buttonAddMovieFile">Add moviefile</Button>
-                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0">Movie File Present</CheckBox>
+                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
-                            <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60">Save</Button>
+                            <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
                             <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60">Delete</Button>
                             <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60">Cancel</Button>
                         </StackPanel>
