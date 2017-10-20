@@ -85,11 +85,19 @@ namespace Media.WPF.Ex01
             if (musicTabItem.IsSelected)
             {
                 _activeController = _musicController;
+                movieListBox.SelectedIndex = -1;
+                textBoxMovieTitle.Clear();
+                textBoxDirector.Clear();
+
                 this.LoadMusicData();
             }
             else if (moviesTabItem.IsSelected)
             {
                 _activeController = _movieController;
+                movieListBox.SelectedIndex = -1;
+                textBoxSongTitle.Clear();
+                textBoxSinger.Clear();
+
                 this.LoadMovieData();
             }
 
@@ -118,6 +126,8 @@ namespace Media.WPF.Ex01
                 this.SelectMovieItem(movie);
                 this.SetMovieForm();
             }
+
+            e.Handled = true;
         }
 
         private void AddFileButton_Click(object sender, RoutedEventArgs e)
@@ -221,6 +231,30 @@ namespace Media.WPF.Ex01
         {
             this.ClearSelected();
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            _activeController.RemoveMedia(_activeController.Selected);
+
+            if (_activeController.GetType() == typeof(MusicController))
+            {
+                _musicController.RemoveSongFromPlaylist((Song) _musicController.Selected);
+                _musicController.RemoveMedia((Song)_musicController.Selected);
+
+                textBoxSinger.Clear();
+                textBoxSongTitle.Clear();
+            }
+            else
+            {
+                _movieController.RemoveMedia((Movie)_movieController.Selected);
+
+                textBoxDirector.Clear();
+                textBoxMovieTitle.Clear();
+            }
+
+            musicListBox.Items.Refresh();
+            movieListBox.Items.Refresh();
+        }
         #endregion
 
         #region Other methods
@@ -237,6 +271,14 @@ namespace Media.WPF.Ex01
         private void ClearSelected()
         {
             _activeController.ClearSelected();
+            musicListBox.SelectedIndex = -1;
+            movieListBox.SelectedIndex = -1;
+
+            textBoxSinger.Clear();
+            textBoxSongTitle.Clear();
+            textBoxDirector.Clear();
+            textBoxMovieTitle.Clear();
+
             this.SetMusicPlayState();
         }
 

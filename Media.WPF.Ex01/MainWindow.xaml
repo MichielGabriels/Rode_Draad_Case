@@ -55,7 +55,7 @@
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
                             <Button x:Name="buttonSaveSong" Margin="10, 0, 0, 0" Width="60" Click="MusicSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60">Delete</Button>
+                            <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click">Delete</Button>
                             <Button x:Name="buttonCancelSong" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
@@ -126,7 +126,7 @@
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
                             <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60">Delete</Button>
+                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click">Delete</Button>
                             <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
