@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Media.WPF.Ex01"
         mc:Ignorable="d"
-        Title="Media Player" Height="360" Width="525">
+        Title="Media Player" MinHeight="380" Height="380" MinWidth="525" Width="525" Closed="Cleanup">
 
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="_File">
-                <MenuItem Header="_Close"/>
+                <MenuItem Header="_Close" Click="OnCloseEvent"/>
             </MenuItem>
 
             <MenuItem Header="_Help">
@@ -18,10 +18,10 @@
             </MenuItem>
         </Menu>
 
-        <TabControl DockPanel.Dock="Bottom" Margin="5">
+        <TabControl DockPanel.Dock="Bottom" Margin="5" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Name="musicTabItem" Header="Music">
                 <Grid>
-                    <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox x:Name="musicListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230" SelectionChanged="MusicListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -40,59 +40,61 @@
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
-                            <TextBox x:Name="textBoxSinger" Width="150" Height="15" Margin="20, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxSinger" Width="150" Height="18" Margin="20, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSongTitle}">Title</Label>
-                            <TextBox x:Name="textBoxSongTitle" Width="150" Height="15" Margin="32, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxSongTitle" Width="150" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Button x:Name="buttonAddMusicFile">Add musicfile</Button>
-                            <CheckBox x:Name="checkBoxMusicFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0">Music File Present</CheckBox>
+                            <Button x:Name="buttonAddMusicFile" Click="AddFileButton_Click">Add musicfile</Button>
+                            <CheckBox x:Name="checkBoxMusicFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Music File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
-                            <Button x:Name="buttonSaveSong" Margin="10, 0, 0, 0" Width="60">Save</Button>
-                            <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60">Delete</Button>
-                            <Button x:Name="buttonCancelSong" Margin="10, 0, 0, 0" Width="60">Cancel</Button>
+                            <Button x:Name="buttonSaveSong" Margin="10, 0, 0, 0" Width="60" Click="MusicSaveButton_Click">Save</Button>
+                            <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                            <Button x:Name="buttonCancelSong" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonAddToPlaylist" Width="160">Add To Playlist</Button>
+                            <Button x:Name="buttonAddToPlaylist" Width="160" IsEnabled="False" Click="MusicAddToPlaylistButton_Click">Add To Playlist</Button>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
                             <StackPanel Orientation="Vertical">
-                                <TextBlock>Now playing:</TextBlock>
+                                <Label x:Name="labelNowPlaying">Now playing:</Label>
 
-                                <Grid Margin="0, 5, 0, 0" Width="125">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid Margin="5, 0, 0, 0" Width="125" HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
 
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
 
-                                    <Button x:Name="buttonPlay" Grid.Column="0" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0">Play</Button>
-                                    <Button x:Name="buttonPause" Grid.Column="1" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0">Pause</Button>
-                                    <Button x:Name="buttonNext" Grid.Column="0" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0">Next</Button>
-                                    <Button x:Name="buttonStop" Grid.Column="1" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0">Stop</Button>
-                                </Grid>
+                                        <Button x:Name="buttonPlay" Grid.Column="0" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0" IsEnabled="False" HorizontalAlignment="Center" Click="MusicPlayButton_Click">Play</Button>
+                                        <Button x:Name="buttonPause" Grid.Column="1" Grid.Row="0" Width="50" Margin="-12, 0, 0, 0" IsEnabled="False" HorizontalAlignment="Center" Click="MusicPauseButton_Click">Pause</Button>
+                                        <Button x:Name="buttonNext" Grid.Column="0" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0" IsEnabled="False" HorizontalAlignment="Center" Click="MusicNextButton_Click">Next</Button>
+                                        <Button x:Name="buttonStop" Grid.Column="1" Grid.Row="1" Width="50" Margin="-12, 10, 0, 0" IsEnabled="False" HorizontalAlignment="Center" Click="MusicStopButton_Click">Stop</Button>
+                                    </Grid>
+                                    
+                                    <Slider x:Name="sliderVolume" VerticalAlignment="Center" Width="100" Margin="5, 5, 0, 0" IsEnabled="False" HorizontalAlignment="Center" ValueChanged="MusicVolumeSlider_ValueChanged"></Slider>
+                                </StackPanel>
                             </StackPanel>
-
-                            <Slider x:Name="sliderVolume" VerticalAlignment="Center" Width="100" Margin="5, 20, 0, 0"></Slider>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Name="moviesTabItem" Header="Movies">
                 <Grid>
-                    <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230">
+                    <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230" SelectionChanged="MovieListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -110,28 +112,28 @@
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
-                            <TextBox x:Name="textBoxDirector" Width="150" Height="15" Margin="20, 0, 0, 0"/>
+                            <Label Target="{Binding ElementName=textBoxDirector}">Director</Label>
+                            <TextBox x:Name="textBoxDirector" Width="150" Height="18" Margin="11, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxMovieTitle}">Title</Label>
-                            <TextBox x:Name="textBoxMovieTitle" Width="150" Height="15" Margin="32, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxMovieTitle" Width="150" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Button x:Name="buttonAddMovieFile">Add moviefile</Button>
-                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0">Movie File Present</CheckBox>
+                            <Button x:Name="buttonAddMovieFile" Click="AddFileButton_Click">Add moviefile</Button>
+                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
-                            <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60">Save</Button>
-                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60">Delete</Button>
-                            <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60">Cancel</Button>
+                            <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
+                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                            <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0">Play Movie</Button>
+                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False" Click="MoviePlayButton_Click">Play Movie</Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

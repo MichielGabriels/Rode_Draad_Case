@@ -103,6 +103,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Media.Controller.Ex01\Media.Controller.Ex01.csproj">
+      <Project>{13ac3d08-e425-4ee6-924a-c49c3cceba3e}</Project>
+      <Name>Media.Controller.Ex01</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Media.DataModel\Media.DataModel.csproj">
       <Project>{cfed4f3a-24fd-4064-b139-b61d086ffe32}</Project>
       <Name>Media.DataModel</Name>
@@ -110,6 +114,10 @@
     <ProjectReference Include="..\Media.Player\Media.Player.csproj">
       <Project>{f360b8fa-e697-4128-9197-25aadcf64d72}</Project>
       <Name>Media.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Media.Utils\Media.Utils.csproj">
+      <Project>{95de6325-a769-4cc8-afbc-6d498d065935}</Project>
+      <Name>Media.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

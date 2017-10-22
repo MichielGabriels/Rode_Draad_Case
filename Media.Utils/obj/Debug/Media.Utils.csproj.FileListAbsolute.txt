@@ -9,3 +9,8 @@ C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\ob
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.csproj.CoreCompileInputs.cache
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.dll
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Utils\obj\Debug\Media.Utils.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\bin\Debug\Media.Utils.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\bin\Debug\Media.Utils.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.csprojResolveAssemblyReference.cache
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.pdb

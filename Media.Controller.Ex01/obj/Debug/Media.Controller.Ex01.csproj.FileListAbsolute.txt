@@ -38,3 +38,16 @@ C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controll
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csproj.CoreCompileInputs.cache
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
 C:\Workspace\PXL-IT-NET\DotNetAdvanced\CaseITSupport\Startproject\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.DataModel.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Player.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Utils.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\NAudio.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Player.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Utils.pdb
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\NAudio.xml
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
+C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
