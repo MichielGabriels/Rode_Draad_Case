@@ -60,7 +60,7 @@
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonAddToPlaylist" Width="160" IsEnabled="False">Add To Playlist</Button>
+                            <Button x:Name="buttonAddToPlaylist" Width="160" IsEnabled="False" Click="MusicAddToPlaylistButton_Click">Add To Playlist</Button>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">

@@ -46,26 +46,6 @@ namespace Media.WPF.Ex01
         }
 
         #region Events
-        private void SetMusicPlayState()
-        {
-            if (_musicController.IsPlaying)
-            {
-                buttonPlay.IsEnabled = false;
-                buttonPause.IsEnabled = true;
-                buttonNext.IsEnabled = _musicController.HasSongsInPlaylist;
-                buttonStop.IsEnabled = true;
-                sliderVolume.IsEnabled = true;
-            }
-            else
-            {
-                buttonPlay.IsEnabled = _musicController.HasSongsInPlaylist;
-                buttonPause.IsEnabled = false;
-                buttonNext.IsEnabled = _musicController.HasSongsInPlaylist;
-                buttonStop.IsEnabled = false;
-                sliderVolume.IsEnabled = false;
-            }
-        }
-
         private void OnCloseEvent(object sender, RoutedEventArgs e)
         {
             _musicController.Dispose();
@@ -255,9 +235,35 @@ namespace Media.WPF.Ex01
             musicListBox.Items.Refresh();
             movieListBox.Items.Refresh();
         }
+
+        private void MusicAddToPlaylistButton_Click(object sender, RoutedEventArgs e)
+        {
+            _musicController.AddSelectedToPlaylist();
+            this.SetButtons();
+        }
         #endregion
 
         #region Other methods
+        private void SetMusicPlayState()
+        {
+            if (_musicController.IsPlaying)
+            {
+                buttonPlay.IsEnabled = false;
+                buttonPause.IsEnabled = true;
+                buttonNext.IsEnabled = _musicController.HasSongsInPlaylist;
+                buttonStop.IsEnabled = true;
+                sliderVolume.IsEnabled = true;
+            }
+            else
+            {
+                buttonPlay.IsEnabled = _musicController.HasSongsInPlaylist;
+                buttonPause.IsEnabled = false;
+                buttonNext.IsEnabled = _musicController.HasSongsInPlaylist;
+                buttonStop.IsEnabled = false;
+                sliderVolume.IsEnabled = false;
+            }
+        }
+
         private void LoadMusicData()
         {
             musicListBox.Items.Refresh();
@@ -301,14 +307,13 @@ namespace Media.WPF.Ex01
             }
             else
             {
+                musicListBox.SelectedItem = null;
+                textBoxSinger.Text = null;
+                textBoxSongTitle.Text = null;
                 buttonAddMusicFile.IsEnabled = true;
                 checkBoxMusicFilePresent.IsChecked = false;
                 buttonDeleteSong.IsEnabled = false;
                 buttonAddToPlaylist.IsEnabled = false;
-
-                textBoxSinger.Text = "";
-                textBoxSongTitle.Text = "";
-                musicListBox.SelectedItem = null;
             }
         }
 
@@ -339,6 +344,19 @@ namespace Media.WPF.Ex01
                 textBoxDirector.Text = "";
                 textBoxSongTitle.Text = "";
                 movieListBox.SelectedItem = null;
+            }
+        }
+
+        private void SetButtons()
+        {
+            if (_activeController.GetType() == typeof(MusicController))
+            {
+                this.SetMusicForm();
+                this.SetMusicPlayState();
+            }
+            else
+            {
+                this.SetMovieForm();
             }
         }
         #endregion
