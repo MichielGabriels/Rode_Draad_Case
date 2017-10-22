@@ -92,6 +92,8 @@ namespace Media.WPF.Ex01
             {
                 this.SelectMusicItem(song);
                 this.SetMusicForm();
+
+                buttonDeleteSong.IsEnabled = true;
             }
 
             e.Handled = true;
@@ -105,6 +107,8 @@ namespace Media.WPF.Ex01
             {
                 this.SelectMovieItem(movie);
                 this.SetMovieForm();
+
+                buttonDeleteMovie.IsEnabled = true;
             }
 
             e.Handled = true;
@@ -256,6 +260,36 @@ namespace Media.WPF.Ex01
 
             this.SetMusicPlay();
         }
+
+        private void MusicNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            _musicController.StopPlaying();
+            MusicPlayButton_Click(null, null);
+            this.SetMusicPlay();
+        }
+
+        private void MusicPauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            _musicController.Pause();
+        }
+
+        private void MusicStopButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_musicController.IsPlaying)
+            {
+                _musicController.StopPlaying();
+                labelNowPlaying.Content = "Now playing:";
+                this.SetMusicPlay();
+            }
+        }
+
+        private void MusicVolumeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (_musicController.IsPlaying)
+            {
+                _musicController.Volume = float.Parse(sliderVolume.Value.ToString());
+            }
+        }
         #endregion
 
         #region Other methods
@@ -299,6 +333,9 @@ namespace Media.WPF.Ex01
             textBoxSongTitle.Clear();
             textBoxDirector.Clear();
             textBoxMovieTitle.Clear();
+
+            buttonDeleteSong.IsEnabled = false;
+            buttonDeleteMovie.IsEnabled = false;
 
             this.SetMusicPlay();
         }
