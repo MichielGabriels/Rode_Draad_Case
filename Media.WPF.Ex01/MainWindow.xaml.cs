@@ -38,8 +38,8 @@ namespace Media.WPF.Ex01
             _musicController = new MusicController(new AudioPlayer(), new AudioPlaylist());
             _movieController = new MovieController();
 
-            _musicController.Player.IsStarted += SetMusicPlayState;
-            _musicController.Player.IsFinished += SetMusicPlayState;
+            _musicController.Player.IsStarted += SetMusicPlay;
+            _musicController.Player.IsFinished += SetMusicPlay;
 
             musicListBox.ItemsSource = _musicController.List;
             movieListBox.ItemsSource = _movieController.List;
@@ -137,7 +137,7 @@ namespace Media.WPF.Ex01
         {
             if (textBoxSinger.Text != "" && textBoxSongTitle.Text != "")
             {
-                if (checkBoxMusicFilePresent.IsChecked == false)
+                if (_activeController.Selected == null)
                 {
                     var newSong = new Song()
                     {
@@ -157,10 +157,14 @@ namespace Media.WPF.Ex01
                         _newFile = selectedSong.File;
                     }
 
-                    _activeController.ClearSelected();
-                    textBoxSinger.Text = "";
-                    textBoxSongTitle.Text = "";
+                    selectedSong.Singer = textBoxSinger.Text;
+                    selectedSong.Title = textBoxSongTitle.Text;
+                    selectedSong.File = _newFile;
                 }
+
+                _activeController.ClearSelected();
+                textBoxSinger.Text = "";
+                textBoxSongTitle.Text = "";
 
                 musicListBox.Items.Refresh();
             }
@@ -241,10 +245,21 @@ namespace Media.WPF.Ex01
             _musicController.AddSelectedToPlaylist();
             this.SetButtons();
         }
+
+        private void MusicPlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_musicController.HasSongsInPlaylist)
+            {
+                var song = _musicController.PlayFromPlaylist();
+                labelNowPlaying.Content = $"Now playing: {song.Singer} - {song.Title}";
+            }
+
+            this.SetMusicPlay();
+        }
         #endregion
 
         #region Other methods
-        private void SetMusicPlayState()
+        private void SetMusicPlay()
         {
             if (_musicController.IsPlaying)
             {
@@ -285,7 +300,7 @@ namespace Media.WPF.Ex01
             textBoxDirector.Clear();
             textBoxMovieTitle.Clear();
 
-            this.SetMusicPlayState();
+            this.SetMusicPlay();
         }
 
         private void SelectMusicItem(Song song)
@@ -352,7 +367,7 @@ namespace Media.WPF.Ex01
             if (_activeController.GetType() == typeof(MusicController))
             {
                 this.SetMusicForm();
-                this.SetMusicPlayState();
+                this.SetMusicPlay();
             }
             else
             {
