@@ -112,8 +112,8 @@
 
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
-                            <TextBox x:Name="textBoxDirector" Width="150" Height="18" Margin="20, 0, 0, 0"/>
+                            <Label Target="{Binding ElementName=textBoxDirector}">Director</Label>
+                            <TextBox x:Name="textBoxDirector" Width="150" Height="18" Margin="11, 0, 0, 0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
@@ -122,18 +122,18 @@
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Button x:Name="buttonAddMovieFile">Add moviefile</Button>
+                            <Button x:Name="buttonAddMovieFile" Click="AddFileButton_Click">Add moviefile</Button>
                             <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
                             <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click">Delete</Button>
+                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
                             <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
                         <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False">Play Movie</Button>
+                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False" Click="MoviePlayButton_Click">Play Movie</Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

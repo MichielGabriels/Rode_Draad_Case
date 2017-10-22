@@ -182,7 +182,7 @@ namespace Media.WPF.Ex01
         {
             if (textBoxDirector.Text != "" && textBoxMovieTitle.Text != "")
             {
-                if (checkBoxMovieFilePresent.IsChecked == false)
+                if (_activeController.Selected == null)
                 {
                     var newMovie = new Movie()
                     {
@@ -202,10 +202,14 @@ namespace Media.WPF.Ex01
                         _newFile = selectedMovie.File;
                     }
 
-                    _activeController.ClearSelected();
-                    textBoxDirector.Text = "";
-                    textBoxMovieTitle.Text = "";
+                    selectedMovie.Director = textBoxDirector.Text;
+                    selectedMovie.Title = textBoxMovieTitle.Text;
+                    selectedMovie.File = _newFile;
                 }
+
+                _activeController.ClearSelected();
+                textBoxDirector.Text = "";
+                textBoxMovieTitle.Text = "";
 
                 movieListBox.Items.Refresh();
             }
@@ -239,6 +243,9 @@ namespace Media.WPF.Ex01
                 textBoxDirector.Clear();
                 textBoxMovieTitle.Clear();
             }
+
+            buttonDeleteSong.IsEnabled = false;
+            buttonDeleteMovie.IsEnabled = false;
 
             musicListBox.Items.Refresh();
             movieListBox.Items.Refresh();
@@ -289,6 +296,12 @@ namespace Media.WPF.Ex01
             {
                 _musicController.Volume = float.Parse(sliderVolume.Value.ToString());
             }
+        }
+
+        private void MoviePlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            var videoPlayer = new VideoPlayer(_activeController.Selected.File);
+            videoPlayer.ShowDialog();
         }
         #endregion
 
