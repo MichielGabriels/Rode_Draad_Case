@@ -14,3 +14,9 @@ C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\bin\Debug\Media.Utils.pd
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.csprojResolveAssemblyReference.cache
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.dll
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\bin\Debug\Media.Utils.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\bin\Debug\Media.Utils.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.csprojResolveAssemblyReference.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.csproj.CoreCompileInputs.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Utils\obj\Debug\Media.Utils.pdb

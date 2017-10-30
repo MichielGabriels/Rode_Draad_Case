@@ -26,3 +26,13 @@ C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\bin\Debug\NAudio.xml
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.csprojResolveAssemblyReference.cache
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.dll
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\Media.Player.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\Media.Player.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\Media.DataModel.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\NAudio.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\Media.DataModel.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\bin\Debug\NAudio.xml
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.csprojResolveAssemblyReference.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.csproj.CoreCompileInputs.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Player\obj\Debug\Media.Player.pdb

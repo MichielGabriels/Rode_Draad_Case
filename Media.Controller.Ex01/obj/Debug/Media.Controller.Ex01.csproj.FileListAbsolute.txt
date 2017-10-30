@@ -51,3 +51,17 @@ C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\NAud
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Controller.Ex01.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.DataModel.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Player.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Utils.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\NAudio.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.DataModel.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Player.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\Media.Utils.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\bin\Debug\NAudio.xml
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csprojResolveAssemblyReference.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.csproj.CoreCompileInputs.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.Controller.Ex01\obj\Debug\Media.Controller.Ex01.pdb
