@@ -101,7 +101,18 @@
             </TabItem>
             <TabItem Name="moviesTabItem" Header="Movies">
                 <Grid>
-                    <ListBox x:Name="movieListBox" HorizontalAlignment="Left" Height="270" Margin="10,0,0,0" VerticalAlignment="Center" Width="230" SelectionChanged="MovieListBox_SelectionChanged">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MinWidth="100"/>
+                        <ColumnDefinition Width="300" MinWidth="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <GridSplitter Grid.Column="0" Grid.RowSpan="2" Width="5" Background="DarkGray"/>
+
+                    <ListBox x:Name="movieListBox" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10, 10, 5" SelectionChanged="MovieListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -113,35 +124,35 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
 
-                    <Label FontSize="20" FontWeight="Bold"  HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top">
-                        <TextBlock TextDecorations="Underline" Text="Selected Movie"/>
-                    </Label>
-
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="250" Margin="0, 60, 0, 0">
-                        <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
+                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Width="275">
+                        <Label FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top">
+                            <TextBlock TextDecorations="Underline" Text="Selected Movie"/>
+                        </Label>
+                        
+                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxDirector}">Director</Label>
-                            <TextBox x:Name="textBoxDirector" Width="150" Height="18" Margin="11, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxDirector" Width="190" Height="18" Margin="11, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
                             <Label Target="{Binding ElementName=textBoxMovieTitle}">Title</Label>
-                            <TextBox x:Name="textBoxMovieTitle" Width="150" Height="18" Margin="32, 0, 0, 0"/>
+                            <TextBox x:Name="textBoxMovieTitle" Width="190" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="20, 0, 0, 0">
-                            <Button x:Name="buttonAddMovieFile" Click="AddFileButton_Click">Add moviefile</Button>
-                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="25, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
+                        <StackPanel Orientation="Horizontal" Margin="35, 5, 0, 0">
+                            <Button x:Name="buttonAddMovieFile" Click="AddFileButton_Click" Width="100">Add moviefile</Button>
+                            <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="10, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
-                            <Button x:Name="buttonSaveMovie" Margin="10, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
-                            <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
+                        <StackPanel Orientation="Horizontal" Margin="35, 10, 0, 0">
+                            <Button x:Name="buttonSaveMovie" Margin="5, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
+                            <Button x:Name="buttonDeleteMovie" Margin="15, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                            <Button x:Name="buttonCancelMovie" Margin="15, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
+                    </StackPanel>
 
-                        <StackPanel Margin="0, 10, 0, 0">
-                            <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False" Click="MoviePlayButton_Click">Play Movie</Button>
-                        </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="1" Margin="0, 0, 0, 5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False" Click="MoviePlayButton_Click">Play Movie</Button>
                     </StackPanel>
                 </Grid>
             </TabItem>
