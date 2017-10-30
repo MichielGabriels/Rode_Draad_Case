@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="Media Player" MinHeight="440" Height="440" MinWidth="525" Width="525" Closed="Cleanup">
 
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButtonCustom}">
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
+    </Window.Resources>
+    
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="_File">
@@ -18,7 +24,7 @@
             </MenuItem>
         </Menu>
 
-        <TabControl DockPanel.Dock="Bottom" Margin="5" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl DockPanel.Dock="Bottom" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Name="musicTabItem" Header="Music">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -32,7 +38,7 @@
 
                     <GridSplitter Grid.Column="0" Grid.RowSpan="2" Width="5" Background="DarkGray"/>
 
-                    <ListBox x:Name="musicListBox" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10, 10, 5" SelectionChanged="MusicListBox_SelectionChanged">
+                    <ListBox x:Name="musicListBox" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" SelectionChanged="MusicListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -49,25 +55,25 @@
                             <TextBlock TextDecorations="Underline" Text="Selected Song"/>
                         </Label>
 
-                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="15, 10, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSinger}">Singer</Label>
                             <TextBox x:Name="textBoxSinger" Width="190" Height="18" Margin="20, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="15, 10, 0, 0">
                             <Label Target="{Binding ElementName=textBoxSongTitle}">Title</Label>
                             <TextBox x:Name="textBoxSongTitle" Width="190" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="35, 5, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
                             <Button x:Name="buttonAddMusicFile" Click="AddFileButton_Click" Width="100">Add musicfile</Button>
                             <CheckBox x:Name="checkBoxMusicFilePresent" VerticalAlignment="Center" Margin="10, 0, 0, 0" IsEnabled="False">Music File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="35, 10, 0, 0">
                             <Button x:Name="buttonSaveSong" Margin="5, 0, 0, 0" Width="60" Click="MusicSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteSong" Margin="15, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
-                            <Button x:Name="buttonCancelSong" Margin="15, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
+                            <Button x:Name="buttonDeleteSong" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                            <Button x:Name="buttonCancelSong" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
 
                         <StackPanel Margin="0, 100, 0, 0" HorizontalAlignment="Left" Width="275">
@@ -78,7 +84,7 @@
                     <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="1" Margin="0, 0, 0, 5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                         <Label x:Name="labelNowPlaying" HorizontalAlignment="Center">Now playing:</Label>
 
-                        <StackPanel Orientation="Horizontal" Margin="0, 5, 0, 0" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Margin="0, 5, 0, 10" HorizontalAlignment="Center">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -112,7 +118,7 @@
 
                     <GridSplitter Grid.Column="0" Grid.RowSpan="2" Width="5" Background="DarkGray"/>
 
-                    <ListBox x:Name="movieListBox" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10, 10, 10, 5" SelectionChanged="MovieListBox_SelectionChanged">
+                    <ListBox x:Name="movieListBox" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" SelectionChanged="MovieListBox_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -129,29 +135,29 @@
                             <TextBlock TextDecorations="Underline" Text="Selected Movie"/>
                         </Label>
                         
-                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="15, 10, 0, 0">
                             <Label Target="{Binding ElementName=textBoxDirector}">Director</Label>
                             <TextBox x:Name="textBoxDirector" Width="190" Height="18" Margin="11, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="15, 0, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="15, 10, 0, 0">
                             <Label Target="{Binding ElementName=textBoxMovieTitle}">Title</Label>
                             <TextBox x:Name="textBoxMovieTitle" Width="190" Height="18" Margin="32, 0, 0, 0"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="35, 5, 0, 0">
+                        <StackPanel Orientation="Horizontal" Margin="20, 10, 0, 0">
                             <Button x:Name="buttonAddMovieFile" Click="AddFileButton_Click" Width="100">Add moviefile</Button>
                             <CheckBox x:Name="checkBoxMovieFilePresent" VerticalAlignment="Center" Margin="10, 0, 0, 0" IsEnabled="False">Movie File Present</CheckBox>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="35, 10, 0, 0">
                             <Button x:Name="buttonSaveMovie" Margin="5, 0, 0, 0" Width="60" Click="MovieSaveButton_Click">Save</Button>
-                            <Button x:Name="buttonDeleteMovie" Margin="15, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
-                            <Button x:Name="buttonCancelMovie" Margin="15, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
+                            <Button x:Name="buttonDeleteMovie" Margin="10, 0, 0, 0" Width="60" Click="DeleteButton_Click" IsEnabled="False">Delete</Button>
+                            <Button x:Name="buttonCancelMovie" Margin="10, 0, 0, 0" Width="60" Click="CancelButton_Click">Cancel</Button>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="1" Margin="0, 0, 0, 5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="1" Margin="0, 0, 0, 10" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                         <Button x:Name="buttonPlayMovie" Width="70" Margin="0, 60, 0, 0" IsEnabled="False" Click="MoviePlayButton_Click">Play Movie</Button>
                     </StackPanel>
                 </Grid>

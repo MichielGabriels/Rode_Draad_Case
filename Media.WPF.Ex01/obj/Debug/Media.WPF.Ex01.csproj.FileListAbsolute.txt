@@ -118,3 +118,5 @@ C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Medi
 C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.csproj.CoreCompileInputs.cache
 C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.exe
 C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Media.WPF.Ex01.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\Themes\ExpressionDark.baml
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.WPF.Ex01\obj\Debug\App.baml
