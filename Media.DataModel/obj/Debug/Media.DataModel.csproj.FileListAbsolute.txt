@@ -13,3 +13,9 @@ C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.DataModel\bin\Debug\Media.Data
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.csprojResolveAssemblyReference.cache
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.dll
 C:\Workspace\dotNetAdvanced\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\bin\Debug\Media.DataModel.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\bin\Debug\Media.DataModel.pdb
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.csproj.CoreCompileInputs.cache
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.dll
+C:\Users\11600252\Documents\GitHub\Rode_Draad_Case\Media.DataModel\obj\Debug\Media.DataModel.pdb
