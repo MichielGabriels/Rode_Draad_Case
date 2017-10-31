@@ -1,5 +1,11 @@
 # Castle Core Changelog
 
+## 4.2.1 (2017-10-11)
+
+Bugfixes:
+- Add missing equality checks in `MethodSignatureComparer.EqualSignatureTypes` to fix `TypeLoadException`s ("Method does not have an implementation") (@stakx, #310)
+- Add missing XML documentation files to NuGet packages (@fir3pho3nixx, #312)
+
 ## 4.2.0 (2017-09-28)
 
 Enhancements:

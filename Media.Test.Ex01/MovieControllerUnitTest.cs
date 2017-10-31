@@ -45,5 +45,16 @@ namespace Media.Test._04
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void InitializeData_ShouldLoadDataInList()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+            Assert.IsNotNull(_sut.List);
+        }
     }
 }
