@@ -270,6 +270,8 @@ namespace Media.WPF.Ex01
         {
             _musicController.AddSelectedToPlaylist();
             this.SetButtons();
+
+            playlistListBox.ItemsSource = _musicController.PlayList.List;
         }
 
         private void MusicPlayButton_Click(object sender, RoutedEventArgs e)
@@ -278,8 +280,11 @@ namespace Media.WPF.Ex01
             {
                 var song = _musicController.PlayFromPlaylist();
                 labelNowPlaying.Content = $"Now playing: {song.Singer} - {song.Title}";
+
+                _musicController.RemoveSongFromPlaylist((Song)_musicController.Selected);
             }
 
+            playlistListBox.Items.Refresh();
             this.SetMusicPlay();
         }
 
