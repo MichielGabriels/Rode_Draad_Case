@@ -99,6 +99,21 @@ namespace Media.WPF.Ex01
             e.Handled = true;
         }
 
+        private void PlaylistListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var song = (Song)playlistListBox.SelectedItem;
+
+            if (song != null)
+            {
+                this.SelectMusicItem(song);
+                this.SetMusicForm();
+
+                buttonDeleteSong.IsEnabled = true;
+            }
+
+            e.Handled = true;
+        }
+
         private void MovieListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var movie = (Movie)movieListBox.SelectedItem;
