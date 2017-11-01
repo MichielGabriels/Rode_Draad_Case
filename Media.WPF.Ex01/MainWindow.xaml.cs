@@ -272,6 +272,7 @@ namespace Media.WPF.Ex01
             this.SetButtons();
 
             playlistListBox.ItemsSource = _musicController.PlayList.List;
+            playlistListBox.Items.Refresh();
         }
 
         private void MusicPlayButton_Click(object sender, RoutedEventArgs e)
