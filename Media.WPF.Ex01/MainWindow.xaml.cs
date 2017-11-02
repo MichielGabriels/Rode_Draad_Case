@@ -184,6 +184,7 @@ namespace Media.WPF.Ex01
                 _activeController.ClearSelected();
                 textBoxSinger.Text = "";
                 textBoxSongTitle.Text = "";
+                checkBoxMusicFilePresent.IsChecked = false;
 
                 musicListBox.Items.Refresh();
             }
@@ -225,6 +226,7 @@ namespace Media.WPF.Ex01
                 _activeController.ClearSelected();
                 textBoxDirector.Text = "";
                 textBoxMovieTitle.Text = "";
+                checkBoxMovieFilePresent.IsChecked = false;
 
                 movieListBox.Items.Refresh();
             }
@@ -261,6 +263,9 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+
+            checkBoxMusicFilePresent.IsChecked = false;
+            checkBoxMovieFilePresent.IsChecked = false;
 
             musicListBox.Items.Refresh();
             movieListBox.Items.Refresh();
@@ -370,6 +375,9 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+
+            checkBoxMusicFilePresent.IsChecked = false;
+            checkBoxMovieFilePresent.IsChecked = false;
 
             this.SetMusicPlay();
         }
