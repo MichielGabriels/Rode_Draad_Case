@@ -84,7 +84,7 @@ namespace Media.DataModel
                             reader = cmd.ExecuteReader();
 
                             int mediaFilePos = reader.GetOrdinal("File");
-
+                            
                             musicFile = (byte[])reader[mediaFilePos];
                         }
                         finally
