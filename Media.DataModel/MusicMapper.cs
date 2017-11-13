@@ -15,7 +15,8 @@ namespace Media.DataModel
         public List<DataModel.Media> GetAllMedia()
         {
             var allMusic = new List<DataModel.Media>();
-            var query = "SELECT [Id], [Title], [Singer] FROM [dbo].[Song]";
+            var query = "SELECT [Id], [Title], [Singer] " +
+                        "FROM [dbo].[Song]";
 
             try
             {
@@ -59,6 +60,47 @@ namespace Media.DataModel
             }
 
             return allMusic;
+        }
+
+        public byte[] GetMediaFile(int id)
+        {
+            byte[] musicFile = null;
+            var query = "SELECT [File] " +
+                        "FROM [dbo].[Song]" +
+                        "WHERE [Id] = " + id;
+
+            try
+            {
+                using (var conn = new SqlConnection(connectionstring))
+                {
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        SqlDataReader reader = null;
+
+                        try
+                        {
+                            conn.Open();
+
+                            reader = cmd.ExecuteReader();
+
+                            int mediaFilePos = reader.GetOrdinal("File");
+
+                            musicFile = (byte[])reader[mediaFilePos];
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                            reader?.Close();
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new LoadMediaFileException();
+            }
+
+            return musicFile;
         }
     }
 }
