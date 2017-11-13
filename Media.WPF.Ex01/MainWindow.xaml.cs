@@ -99,6 +99,21 @@ namespace Media.WPF.Ex01
             e.Handled = true;
         }
 
+        private void PlaylistListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var song = (Song)playlistListBox.SelectedItem;
+
+            if (song != null)
+            {
+                this.SelectMusicItem(song);
+                this.SetMusicForm();
+
+                buttonDeleteSong.IsEnabled = true;
+            }
+
+            e.Handled = true;
+        }
+
         private void MovieListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var movie = (Movie)movieListBox.SelectedItem;
@@ -169,6 +184,7 @@ namespace Media.WPF.Ex01
                 _activeController.ClearSelected();
                 textBoxSinger.Text = "";
                 textBoxSongTitle.Text = "";
+                checkBoxMusicFilePresent.IsChecked = false;
 
                 musicListBox.Items.Refresh();
             }
@@ -210,6 +226,7 @@ namespace Media.WPF.Ex01
                 _activeController.ClearSelected();
                 textBoxDirector.Text = "";
                 textBoxMovieTitle.Text = "";
+                checkBoxMovieFilePresent.IsChecked = false;
 
                 movieListBox.Items.Refresh();
             }
@@ -247,6 +264,9 @@ namespace Media.WPF.Ex01
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
 
+            checkBoxMusicFilePresent.IsChecked = false;
+            checkBoxMovieFilePresent.IsChecked = false;
+
             musicListBox.Items.Refresh();
             movieListBox.Items.Refresh();
         }
@@ -255,6 +275,8 @@ namespace Media.WPF.Ex01
         {
             _musicController.AddSelectedToPlaylist();
             this.SetButtons();
+
+            playlistListBox.ItemsSource = _musicController.PlayList.List;
         }
 
         private void MusicPlayButton_Click(object sender, RoutedEventArgs e)
@@ -263,8 +285,11 @@ namespace Media.WPF.Ex01
             {
                 var song = _musicController.PlayFromPlaylist();
                 labelNowPlaying.Content = $"Now playing: {song.Singer} - {song.Title}";
+
+                _musicController.RemoveSongFromPlaylist((Song)_musicController.Selected);
             }
 
+            playlistListBox.Items.Refresh();
             this.SetMusicPlay();
         }
 
@@ -349,6 +374,9 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+
+            checkBoxMusicFilePresent.IsChecked = false;
+            checkBoxMovieFilePresent.IsChecked = false;
 
             this.SetMusicPlay();
         }
