@@ -102,5 +102,42 @@ namespace Media.DataModel
 
             return musicFile;
         }
+
+        public Media AddMedia(Media newMedia)
+        {
+            string query;
+
+            if (newMedia.File == null)
+            {
+                query = "INSERT INTO [dbo].[Song] ([Title], [Singer]) " +
+                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "'); " +
+                        "SELECT CAST(scope_identity() AS int);";
+            }
+            else
+            {
+                query = "INSERT INTO [dbo].[Song] ([Title], [Singer], [File]) " +
+                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', " + ("0x" + BitConverter.ToString(newMedia.File).Replace("-", "")) + "'); " +
+                        "SELECT CAST(scope_identity() AS int);";
+            }
+
+            try
+            {
+                using (var conn = new SqlConnection(connectionstring))
+                {
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        conn.Open();
+
+                        newMedia.Id = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new SaveMediaFailedException();
+            }
+
+            return newMedia;
+        }
     }
 }
