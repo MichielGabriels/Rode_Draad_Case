@@ -139,5 +139,72 @@ namespace Media.DataModel
 
             return newMedia;
         }
+
+        public bool UpdateMusic(Song updateSong)
+        {
+            int updateCount = 0;
+
+            string updateQuery;
+
+            if (updateSong.File == null)
+            {
+                updateQuery = "UPDATE [dbo].[Song] SET [Title] = @Title, [Singer] = @Singer " +
+                              "WHERE [Id] = @Id";
+            }
+            else
+            {
+                updateQuery = "UPDATE [dbo].[Song] SET [Title] = @Title, [Singer] = @Singer, [File] = @File " +
+                              "WHERE [Id] = @Id";
+            }
+
+            using (var conn = new SqlConnection(connectionstring))
+            {
+                using (var cmd = new SqlCommand(updateQuery, conn))
+                {
+                    conn.Open();
+
+                    updateSong.Id = (int)cmd.ExecuteScalar();
+                }
+            }
+
+            return updateCount > 0;
+        }
+
+        public bool UpdateMedia(Media updateMedia)
+        {
+            int updateCount = 0;
+
+            string updateQuery;
+
+            if (updateMedia.File == null)
+            {
+                updateQuery = "UPDATE [dbo].[Song] SET [Title] = '" + updateMedia.Title + "', [Singer] = '" + ((Song)updateMedia).Singer + "' " +
+                              "WHERE [Id] = " + updateMedia.Id;
+            }
+            else
+            {
+                updateQuery = "UPDATE [dbo].[Song] SET [Title] = '" + updateMedia.Title + "', [Singer] = '" + ((Song)updateMedia).Singer + "' " + "', [File] = '" + ("0x" + BitConverter.ToString(updateMedia.File).Replace("-", "")) + "' " +
+                              "WHERE [Id] = " + updateMedia.Id;
+            }
+
+            try
+            {
+                using (var conn = new SqlConnection(connectionstring))
+                {
+                    using (var cmd = new SqlCommand(updateQuery, conn))
+                    {
+                        conn.Open();
+
+                        updateMedia.Id = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new UpdateMediaFailedException();
+            }
+
+            return updateCount > 0;
+        }
     }
 }
