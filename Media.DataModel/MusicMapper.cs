@@ -206,5 +206,52 @@ namespace Media.DataModel
 
             return updateCount > 0;
         }
+
+        public bool DeleteMusic(Song oldSong)
+        {
+            int updateCount = 0;
+
+            string deleteQuery = "DELETE FROM [dbo].[Song] " +
+                                 "WHERE Id = @Id;";
+
+            using (var conn = new SqlConnection(connectionstring))
+            {
+                using (var cmd = new SqlCommand(deleteQuery, conn))
+                {
+                    conn.Open();
+
+                    oldSong.Id = (int)cmd.ExecuteScalar();
+                }
+            }
+
+            return updateCount > 0;
+        }
+
+        public bool DeleteMedia(Media oldMedia)
+        {
+            int updateCount = 0;
+
+            string deleteQuery = "DELETE FROM [dbo].[Song] " +
+                                 "WHERE Id = " + oldMedia.Id;
+
+            try
+            {
+                using (var conn = new SqlConnection(connectionstring))
+                {
+                    using (var cmd = new SqlCommand(deleteQuery, conn))
+                    {
+                        conn.Open();
+
+                        oldMedia.Id = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw new RemoveMediaFailedException();
+            }
+
+            return updateCount > 0;
+        }
     }
 }
