@@ -49,6 +49,7 @@
     <Compile Include="Exceptions\MediaReadFailedException.cs" />
     <Compile Include="MediaType.cs" />
     <Compile Include="Movie.cs" />
+    <Compile Include="MovieMapper.cs" />
     <Compile Include="MusicMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Exceptions\SaveMediaFailedException.cs" />
