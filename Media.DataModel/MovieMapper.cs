@@ -132,9 +132,9 @@ namespace Media.DataModel
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                throw new SaveMediaFailedException();
+                throw new SaveMediaFailedException(e);
             }
 
             return newMedia;

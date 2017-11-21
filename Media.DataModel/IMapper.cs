@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Media.DataModel
 {
-    interface IMapper
+    public interface IMapper
     {
         List<Media> GetAllMedia();
         byte[] GetMediaFile(int id);

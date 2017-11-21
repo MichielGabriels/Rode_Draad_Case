@@ -8,7 +8,7 @@ namespace Media.DataModel.Exceptions
 {
     public class SaveMediaFailedException: Exception
     {
-        public SaveMediaFailedException(): base("The record that u wanted to save can't be saved.")
+        public SaveMediaFailedException(Exception e): base("The record that u wanted to save can't be saved.", e)
         {
 
         }

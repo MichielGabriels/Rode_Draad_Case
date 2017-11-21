@@ -115,8 +115,10 @@ namespace Media.DataModel
             }
             else
             {
+                string byteArray = "0x" + BitConverter.ToString(newMedia.File).Replace("-", "");
+
                 query = "INSERT INTO [dbo].[Song] ([Title], [Singer], [File]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', " + ("0x" + BitConverter.ToString(newMedia.File).Replace("-", "")) + "'); " +
+                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', '" + byteArray + "'); " +
                         "SELECT CAST(scope_identity() AS int);";
             }
 
@@ -132,9 +134,9 @@ namespace Media.DataModel
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                throw new SaveMediaFailedException();
+                throw new SaveMediaFailedException(e);
             }
 
             return newMedia;
