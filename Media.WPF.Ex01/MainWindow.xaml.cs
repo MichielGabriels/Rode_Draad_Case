@@ -43,6 +43,7 @@ namespace Media.WPF.Ex01
 
             musicListBox.ItemsSource = _musicController.List;
             movieListBox.ItemsSource = _movieController.List;
+            playlistListBox.ItemsSource = _musicController.PlayList.List;
         }
 
         #region Events
@@ -354,6 +355,7 @@ namespace Media.WPF.Ex01
         private void LoadMusicData()
         {
             musicListBox.Items.Refresh();
+            playlistListBox.Items.Refresh();
         }
 
         private void LoadMovieData()

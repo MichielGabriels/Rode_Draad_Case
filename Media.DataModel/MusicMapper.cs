@@ -115,10 +115,8 @@ namespace Media.DataModel
             }
             else
             {
-                string byteArray = "0x" + BitConverter.ToString(newMedia.File).Replace("-", "");
-
                 query = "INSERT INTO [dbo].[Song] ([Title], [Singer], [File]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', '" + byteArray + "'); " +
+                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', 0x" + BitConverter.ToString(newMedia.File).Replace("-", "") + "); " +
                         "SELECT CAST(scope_identity() AS int);";
             }
 

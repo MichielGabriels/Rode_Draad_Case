@@ -61,7 +61,7 @@ namespace Media.Controller.Ex01
             {
                 Selected = newSelected;
             }
-        }
+       }
 
         /// <summary>
         /// Adds an item to the list of media items.
