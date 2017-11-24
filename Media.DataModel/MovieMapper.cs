@@ -207,26 +207,6 @@ namespace Media.DataModel
             return updateCount > 0;
         }
 
-        public bool DeleteMovie(Movie oldMovie)
-        {
-            int updateCount = 0;
-
-            string deleteQuery = "DELETE FROM [dbo].[Movie] " +
-                                 "WHERE Id = @Id;";
-
-            using (var conn = new SqlConnection(connectionstring))
-            {
-                using (var cmd = new SqlCommand(deleteQuery, conn))
-                {
-                    conn.Open();
-
-                    oldMovie.Id = (int)cmd.ExecuteScalar();
-                }
-            }
-
-            return updateCount > 0;
-        }
-
         public bool DeleteMedia(Media oldMedia)
         {
             int updateCount = 0;
