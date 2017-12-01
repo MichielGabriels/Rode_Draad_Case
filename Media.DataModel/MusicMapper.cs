@@ -199,9 +199,9 @@ namespace Media.DataModel
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                throw new UpdateMediaFailedException();
+                throw new UpdateMediaFailedException(e);
             }
 
             return updateCount > 0;
@@ -226,9 +226,9 @@ namespace Media.DataModel
                     }
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-                throw new RemoveMediaFailedException();
+                throw new RemoveMediaFailedException(e);
             }
 
             return updateCount > 0;

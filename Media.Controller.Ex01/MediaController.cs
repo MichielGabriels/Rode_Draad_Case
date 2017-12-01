@@ -63,6 +63,20 @@ namespace Media.Controller.Ex01
             }
        }
 
+        public DataModel.Media LoadMediaFile(int id)
+        {
+            foreach (DataModel.Media media in List)
+            {
+                if (media.Id == id)
+                {
+                    media.File = _mediaMapper.GetMediaFile(id);
+                    return media;
+                }
+            }
+
+            throw new DataModel.Exceptions.LoadMediaFileException();
+        }
+
         /// <summary>
         /// Adds an item to the list of media items.
         /// </summary>
