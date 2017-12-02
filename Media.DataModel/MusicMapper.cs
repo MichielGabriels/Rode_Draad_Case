@@ -80,8 +80,9 @@ namespace Media.DataModel
                         try
                         {
                             conn.Open();
-
+                            
                             reader = cmd.ExecuteReader();
+                            reader.Read();
 
                             int mediaFilePos = reader.GetOrdinal("File");
                             
@@ -222,7 +223,7 @@ namespace Media.DataModel
                     {
                         conn.Open();
 
-                        oldMedia.Id = (int)cmd.ExecuteScalar();
+                        oldMedia.Id = (int)cmd.ExecuteNonQuery();
                     }
                 }
             }

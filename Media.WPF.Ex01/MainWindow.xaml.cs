@@ -90,7 +90,12 @@ namespace Media.WPF.Ex01
             this.playlistListBox.SelectedIndex = -1;
 
             var selectedItem = (Song)musicListBox.SelectedItem;
-            var song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
+            var song = (Song) null;
+
+            if (selectedItem != null)
+            {
+                song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
+            }
 
             if (song != null)
             {
@@ -247,8 +252,6 @@ namespace Media.WPF.Ex01
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            _activeController.RemoveMedia(_activeController.Selected);
-
             if (_activeController.GetType() == typeof(MusicController))
             {
                 _musicController.RemoveSongFromPlaylist((Song) _musicController.Selected);
@@ -267,6 +270,7 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+            buttonAddToPlaylist.IsEnabled = false;
 
             checkBoxMusicFilePresent.IsChecked = false;
             checkBoxMovieFilePresent.IsChecked = false;
