@@ -150,39 +150,6 @@ namespace Media.DataModel
             return newMedia;
         }
 
-        public bool UpdateMusic(Song updateSong)
-        {
-            int updateCount = 0;
-
-            string updateQuery;
-
-            if (updateSong.File == null)
-            {
-                updateQuery = "UPDATE [dbo].[Song] SET [Title] = @Title, [Singer] = @Singer " +
-                              "WHERE [Id] = @Id";
-            }
-            else
-            {
-                updateQuery = "UPDATE [dbo].[Song] SET [Title] = @Title, [Singer] = @Singer, [File] = @File " +
-                              "WHERE [Id] = @Id";
-            }
-
-            using (var conn = new SqlConnection(connectionstring))
-            {
-                using (var cmd = new SqlCommand(null, conn))
-                {
-                    conn.Open();
-
-                    cmd.CommandText = updateQuery;
-                    cmd.Prepare();
-
-                    updateSong.Id = (int)cmd.ExecuteScalar();
-                }
-            }
-
-            return updateCount > 0;
-        }
-
         public bool UpdateMedia(Media updateMedia)
         {
             int updateCount = 0;

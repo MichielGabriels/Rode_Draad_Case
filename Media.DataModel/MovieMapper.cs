@@ -150,39 +150,6 @@ namespace Media.DataModel
             return newMedia;
         }
 
-        public bool UpdateMovie(Movie updateMovie)
-        {
-            int updateCount = 0;
-
-            string updateQuery;
-
-            if (updateMovie.File == null)
-            {
-                updateQuery = "UPDATE [dbo].[Movie] SET [Title] = @Title, [Director] = @Director " +
-                              "WHERE [Id] = @Id";
-            }
-            else
-            {
-                updateQuery = "UPDATE [dbo].[Movie] SET [Title] = @Title, [Director] = @Director, [File] = @File " +
-                              "WHERE [Id] = @Id";
-            }
-
-            using (var conn = new SqlConnection(connectionstring))
-            {
-                using (var cmd = new SqlCommand(null, conn))
-                {
-                    conn.Open();
-
-                    cmd.CommandText = updateQuery;
-                    cmd.Prepare();
-
-                    updateMovie.Id = (int)cmd.ExecuteScalar();
-                }
-            }
-
-            return updateCount > 0;
-        }
-
         public bool UpdateMedia(Media updateMedia)
         {
             int updateCount = 0;
