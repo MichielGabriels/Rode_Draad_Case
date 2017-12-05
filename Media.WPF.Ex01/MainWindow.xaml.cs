@@ -98,7 +98,7 @@ namespace Media.WPF.Ex01
             }
             else
             {
-                song = (Song)musicListBox.SelectedItem;
+                song = selectedItem;
             }
 
             if (song != null)
@@ -138,7 +138,7 @@ namespace Media.WPF.Ex01
             }
             else
             {
-                movie = (Movie)movieListBox.SelectedItem;
+                movie = selectedItem;
             }
 
             if (movie != null)
