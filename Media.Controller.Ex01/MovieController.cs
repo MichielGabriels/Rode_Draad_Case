@@ -15,7 +15,7 @@ namespace Media.Controller.Ex01
         /// <summary>
         /// Constructor that calls the base constructor without further actions.
         /// </summary>
-        public MovieController() : base()
+        public MovieController() : base(new MovieMapper())
         {
 
         }
@@ -27,22 +27,6 @@ namespace Media.Controller.Ex01
         public override string FileFilter()
         {
             return "Video Files(*.avi) | *.avi;";
-        }
-
-        /// <summary>
-        /// Loads data in the memory (List).
-        /// </summary>
-        protected override void InitializeData()
-        {
-            List = new List<DataModel.Media>();
-            List.AddRange(new Movie[]
-            {
-                new Movie()
-                {
-                    Title = "The Jungle Book",
-                    Director = "Jon Favreau"
-                }
-            });
         }
     }
 }

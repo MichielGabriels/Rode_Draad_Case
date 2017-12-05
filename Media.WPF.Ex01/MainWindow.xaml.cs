@@ -43,6 +43,7 @@ namespace Media.WPF.Ex01
 
             musicListBox.ItemsSource = _musicController.List;
             movieListBox.ItemsSource = _movieController.List;
+            playlistListBox.ItemsSource = _musicController.PlayList.List;
         }
 
         #region Events
@@ -86,7 +87,15 @@ namespace Media.WPF.Ex01
 
         private void MusicListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var song = (Song)musicListBox.SelectedItem;
+            this.playlistListBox.SelectedIndex = -1;
+
+            var selectedItem = (Song)musicListBox.SelectedItem;
+            var song = (Song) null;
+
+            if (selectedItem != null)
+            {
+                song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
+            }
 
             if (song != null)
             {
@@ -116,7 +125,13 @@ namespace Media.WPF.Ex01
 
         private void MovieListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var movie = (Movie)movieListBox.SelectedItem;
+            var selectedItem = (Movie)movieListBox.SelectedItem;
+            var movie = (Movie) null;
+
+            if (selectedItem != null)
+            {
+                movie = (Movie)_activeController.LoadMediaFile(selectedItem.Id);
+            }
 
             if (movie != null)
             {
@@ -243,8 +258,6 @@ namespace Media.WPF.Ex01
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            _activeController.RemoveMedia(_activeController.Selected);
-
             if (_activeController.GetType() == typeof(MusicController))
             {
                 _musicController.RemoveSongFromPlaylist((Song) _musicController.Selected);
@@ -263,6 +276,7 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+            buttonAddToPlaylist.IsEnabled = false;
 
             checkBoxMusicFilePresent.IsChecked = false;
             checkBoxMovieFilePresent.IsChecked = false;
@@ -277,6 +291,7 @@ namespace Media.WPF.Ex01
             this.SetButtons();
 
             playlistListBox.ItemsSource = _musicController.PlayList.List;
+            this.LoadMusicData();
         }
 
         private void MusicPlayButton_Click(object sender, RoutedEventArgs e)
@@ -354,6 +369,7 @@ namespace Media.WPF.Ex01
         private void LoadMusicData()
         {
             musicListBox.Items.Refresh();
+            playlistListBox.Items.Refresh();
         }
 
         private void LoadMovieData()

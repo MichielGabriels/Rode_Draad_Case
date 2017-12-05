@@ -8,7 +8,7 @@ namespace Media.DataModel.Exceptions
 {
     public class RemoveMediaFailedException: Exception
     {
-        public RemoveMediaFailedException(): base("The record that u wanted to delete can't be deleted.")
+        public RemoveMediaFailedException(Exception e): base("The record that u wanted to delete can't be deleted.", e)
         {
 
         }

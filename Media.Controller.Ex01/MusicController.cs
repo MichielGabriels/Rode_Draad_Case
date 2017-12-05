@@ -27,7 +27,7 @@ namespace Media.Controller.Ex01
         /// </summary>
         /// <param name="player">A player that you want to use and that is already initialized.</param>
         /// <param name="playlist">A playlist that you want to use and that is already initialized.</param>
-        public MusicController(IPlayer player, IPlaylist playlist) : base()
+        public MusicController(IPlayer player, IPlaylist playlist) : base(new MusicMapper())
         {
             _player = player;
             _playlist = playlist;
@@ -89,27 +89,6 @@ namespace Media.Controller.Ex01
         public override void Dispose()
         {
             _player.Dispose();
-        }
-
-        /// <summary>
-        /// Loads data in the memory (List).
-        /// </summary>
-        protected override void InitializeData()
-        {
-            List = new List<DataModel.Media>();
-            List.AddRange(new Song[]
-            {
-                new Song()
-                {
-                    Title = "Summer of 69",
-                    Singer = "Bryan Adams"
-                },
-                new Song()
-                {
-                    Title = "Title",
-                    Singer = "Singer"
-                }
-            });
         }
 
         /// <summary>

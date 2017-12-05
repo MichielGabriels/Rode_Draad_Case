@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Media.DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,12 @@ namespace Media.Controller.Ex01
     /// </summary>
     public abstract class MediaController : IDisposable
     {
+        protected IMapper _mediaMapper;
+
         /// <summary>
         /// A list where media items are stored.
         /// </summary>
-        public List<DataModel.Media> List { get; protected set; }
+        public List<DataModel.Media> List { get; protected set; } = new List<DataModel.Media>();
         /// <summary>
         /// A property where a selected media item can be stored.
         /// </summary>
@@ -23,8 +26,10 @@ namespace Media.Controller.Ex01
         /// <summary>
         /// Constructor that sets all properties to default (clearing selected) and loads data in the memory (List).
         /// </summary>
-        public MediaController()
+        public MediaController(IMapper mediaMapper)
         {
+            _mediaMapper = mediaMapper;
+
             ClearSelected();
             InitializeData();
         }
@@ -32,7 +37,11 @@ namespace Media.Controller.Ex01
         /// <summary>
         /// Loads data in the memory (List). This method is abstract because each derived classes will implement this differently.
         /// </summary>
-        protected abstract void InitializeData();
+        protected void InitializeData()
+        {
+            this.List.Clear();
+            this.List.AddRange(_mediaMapper.GetAllMedia());
+        }
 
         /// <summary>
         /// Sets the property Selected to default (null).
@@ -52,6 +61,20 @@ namespace Media.Controller.Ex01
             {
                 Selected = newSelected;
             }
+       }
+
+        public DataModel.Media LoadMediaFile(int id)
+        {
+            foreach (DataModel.Media media in List)
+            {
+                if (media.Id == id)
+                {
+                    media.File = _mediaMapper.GetMediaFile(id);
+                    return media;
+                }
+            }
+
+            throw new DataModel.Exceptions.LoadMediaFileException();
         }
 
         /// <summary>
@@ -61,7 +84,9 @@ namespace Media.Controller.Ex01
         public void AddMedia(DataModel.Media newMedia)
         {
             ClearSelected();
-            List.Add(newMedia);
+            //List.Add(newMedia);
+            _mediaMapper.AddMedia(newMedia);
+            this.InitializeData();
         }
 
         /// <summary>
@@ -71,7 +96,9 @@ namespace Media.Controller.Ex01
         public void RemoveMedia(DataModel.Media oldMedia)
         {
             ClearSelected();
-            List.Remove(oldMedia);
+            //List.Remove(oldMedia);
+            _mediaMapper.DeleteMedia(oldMedia);
+            this.InitializeData();
         }
 
         /// <summary>

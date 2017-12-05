@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFED4F3A-24FD-4064-B139-B61D086FFE32}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Media.DataModel</RootNamespace>
-    <AssemblyName>Media.DataModel</AssemblyName>
+    <ProjectGuid>{7E71EB1A-9DCB-4F78-9943-8628CFA845AE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MediaDB.Data</RootNamespace>
+    <AssemblyName>MediaDB.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,26 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\LoadMediaFileException.cs" />
-    <Compile Include="Exceptions\RemoveMediaFailedException.cs" />
-    <Compile Include="Exceptions\UpdateMediaFailedException.cs" />
-    <Compile Include="IMapper.cs" />
-    <Compile Include="Media.cs" />
-    <Compile Include="Exceptions\MediaReadFailedException.cs" />
-    <Compile Include="MediaType.cs" />
-    <Compile Include="Movie.cs" />
-    <Compile Include="MovieMapper.cs" />
-    <Compile Include="MusicMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Exceptions\SaveMediaFailedException.cs" />
-    <Compile Include="Song.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Media.DataModel\Media.DataModel.csproj">
+      <Project>{cfed4f3a-24fd-4064-b139-b61d086ffe32}</Project>
+      <Name>Media.DataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
