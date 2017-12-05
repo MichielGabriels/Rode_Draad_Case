@@ -22,13 +22,16 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(query, conn))
+                    using (var cmd = new SqlCommand(null, conn))
                     {
                         SqlDataReader reader = null;
 
                         try
                         {
                             conn.Open();
+
+                            cmd.CommandText = query;
+                            cmd.Prepare();
 
                             reader = cmd.ExecuteReader();
 
@@ -73,13 +76,16 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(query, conn))
+                    using (var cmd = new SqlCommand(null, conn))
                     {
                         SqlDataReader reader = null;
 
                         try
                         {
                             conn.Open();
+
+                            cmd.CommandText = query;
+                            cmd.Prepare();
 
                             reader = cmd.ExecuteReader();
                             reader.Read();
@@ -125,9 +131,12 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(query, conn))
+                    using (var cmd = new SqlCommand(null, conn))
                     {
                         conn.Open();
+
+                        cmd.CommandText = query;
+                        cmd.Prepare();
 
                         newMedia.Id = (int)cmd.ExecuteScalar();
                     }
@@ -160,9 +169,12 @@ namespace Media.DataModel
 
             using (var conn = new SqlConnection(connectionstring))
             {
-                using (var cmd = new SqlCommand(updateQuery, conn))
+                using (var cmd = new SqlCommand(null, conn))
                 {
                     conn.Open();
+
+                    cmd.CommandText = updateQuery;
+                    cmd.Prepare();
 
                     updateMovie.Id = (int)cmd.ExecuteScalar();
                 }
@@ -192,9 +204,12 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(updateQuery, conn))
+                    using (var cmd = new SqlCommand(null, conn))
                     {
                         conn.Open();
+
+                        cmd.CommandText = updateQuery;
+                        cmd.Prepare();
 
                         updateMedia.Id = (int)cmd.ExecuteScalar();
                     }
@@ -219,9 +234,12 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(deleteQuery, conn))
+                    using (var cmd = new SqlCommand(null, conn))
                     {
                         conn.Open();
+
+                        cmd.CommandText = deleteQuery;
+                        cmd.Prepare();
 
                         oldMedia.Id = (int)cmd.ExecuteNonQuery();
                     }

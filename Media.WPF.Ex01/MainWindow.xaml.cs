@@ -92,9 +92,13 @@ namespace Media.WPF.Ex01
             var selectedItem = (Song)musicListBox.SelectedItem;
             var song = (Song) null;
 
-            if (selectedItem != null)
+            if (selectedItem != null && selectedItem.File != null)
             {
                 song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
+            }
+            else
+            {
+                song = (Song)musicListBox.SelectedItem;
             }
 
             if (song != null)
@@ -128,9 +132,13 @@ namespace Media.WPF.Ex01
             var selectedItem = (Movie)movieListBox.SelectedItem;
             var movie = (Movie) null;
 
-            if (selectedItem != null)
+            if (selectedItem != null && selectedItem.File != null)
             {
                 movie = (Movie)_activeController.LoadMediaFile(selectedItem.Id);
+            }
+            else
+            {
+                movie = (Movie)movieListBox.SelectedItem;
             }
 
             if (movie != null)
