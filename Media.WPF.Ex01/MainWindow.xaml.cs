@@ -125,7 +125,13 @@ namespace Media.WPF.Ex01
 
         private void MovieListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var movie = (Movie)movieListBox.SelectedItem;
+            var selectedItem = (Movie)movieListBox.SelectedItem;
+            var movie = (Movie) null;
+
+            if (selectedItem != null)
+            {
+                movie = (Movie)_activeController.LoadMediaFile(selectedItem.Id);
+            }
 
             if (movie != null)
             {
@@ -285,6 +291,7 @@ namespace Media.WPF.Ex01
             this.SetButtons();
 
             playlistListBox.ItemsSource = _musicController.PlayList.List;
+            this.LoadMusicData();
         }
 
         private void MusicPlayButton_Click(object sender, RoutedEventArgs e)

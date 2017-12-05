@@ -82,6 +82,7 @@ namespace Media.DataModel
                             conn.Open();
 
                             reader = cmd.ExecuteReader();
+                            reader.Read();
 
                             int mediaFilePos = reader.GetOrdinal("File");
 
@@ -116,7 +117,7 @@ namespace Media.DataModel
             else
             {
                 query = "INSERT INTO [dbo].[Movie] ([Title], [Director], [File]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Movie)newMedia).Director + "', " + ("0x" + BitConverter.ToString(newMedia.File).Replace("-", "")) + "'); " +
+                        "VALUES ('" + newMedia.Title + "', '" + ((Movie)newMedia).Director + "', 0x" + BitConverter.ToString(newMedia.File).Replace("-", "") + "); " +
                         "SELECT CAST(scope_identity() AS int);";
             }
 
@@ -222,7 +223,7 @@ namespace Media.DataModel
                     {
                         conn.Open();
 
-                        oldMedia.Id = (int)cmd.ExecuteScalar();
+                        oldMedia.Id = (int)cmd.ExecuteNonQuery();
                     }
                 }
             }
