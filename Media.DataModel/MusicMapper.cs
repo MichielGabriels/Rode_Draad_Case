@@ -180,20 +180,18 @@ namespace Media.DataModel
         public bool DeleteMedia(Media oldMedia)
         {
             int updateCount = 0;
-
-            string deleteQuery = "DELETE FROM [dbo].[Song] " +
-                                 "WHERE Id = " + oldMedia.Id;
-
+            
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spDeleteSong]", conn))
                     {
                         conn.Open();
 
-                        cmd.CommandText = deleteQuery;
-                        cmd.Prepare();
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@Id", ((Song)oldMedia).Id);
 
                         oldMedia.Id = (int)cmd.ExecuteNonQuery();
                     }
