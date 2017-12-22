@@ -92,12 +92,23 @@ namespace Media.Controller.Ex01
         /// <summary>
         /// Removes an item from the list of media items.
         /// </summary>
-        /// <param name="oldMedia">An item form the list of media items you want to delete.</param>
+        /// <param name="oldMedia">An item from the list of media items you want to delete.</param>
         public void RemoveMedia(DataModel.Media oldMedia)
         {
             ClearSelected();
             //List.Remove(oldMedia);
             _mediaMapper.DeleteMedia(oldMedia);
+            this.InitializeData();
+        }
+
+        /// <summary>
+        /// Updates an item in the list of media items.
+        /// </summary>
+        /// <param name="updateMedia">An item from the list of media items you want to update.</param>
+        public void UpdateMedia(DataModel.Media updateMedia)
+        {
+            ClearSelected();
+            _mediaMapper.UpdateMedia(updateMedia);
             this.InitializeData();
         }
 

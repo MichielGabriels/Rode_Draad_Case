@@ -204,6 +204,8 @@ namespace Media.WPF.Ex01
                     selectedSong.Singer = textBoxSinger.Text;
                     selectedSong.Title = textBoxSongTitle.Text;
                     selectedSong.File = _newFile;
+
+                    _activeController.UpdateMedia(selectedSong);
                 }
 
                 _activeController.ClearSelected();

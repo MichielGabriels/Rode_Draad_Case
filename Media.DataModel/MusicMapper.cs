@@ -112,29 +112,16 @@ namespace Media.DataModel
 
         public Media AddMedia(Media newMedia)
         {
-            string query;
-
-            if (newMedia.File == null)
-            {
-                query = "INSERT INTO [dbo].[Song] ([Title], [Singer]) " +
-                        "VALUES (@Title, @Singer); " +
-                        "SELECT CAST(scope_identity() AS int);";
-            }
-            else
-            {
-                query = "INSERT INTO [dbo].[Song] ([Title], [Singer], [File]) " +
-                        "VALUES (@Title, @Singer, @File); " +
-                        "SELECT CAST(scope_identity() AS int);";
-            }
-
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(query, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spAddSong]", conn))
                     {
                         conn.Open();
-                        
+
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
                         cmd.Parameters.AddWithValue("@Title", ((Song)newMedia).Title);
                         cmd.Parameters.AddWithValue("@Singer", ((Song)newMedia).Singer);
                         
@@ -143,7 +130,7 @@ namespace Media.DataModel
                             cmd.Parameters.AddWithValue("@File", ((Song)newMedia).File);
                         }
 
-                        newMedia.Id = (int)cmd.ExecuteScalar();
+                        newMedia.Id = (int)cmd.ExecuteNonQuery();
                     }
                 }
             }
@@ -159,31 +146,26 @@ namespace Media.DataModel
         {
             int updateCount = 0;
 
-            string updateQuery;
-
-            if (updateMedia.File == null)
-            {
-                updateQuery = "UPDATE [dbo].[Song] SET [Title] = '" + updateMedia.Title + "', [Singer] = '" + ((Song)updateMedia).Singer + "' " +
-                              "WHERE [Id] = " + updateMedia.Id;
-            }
-            else
-            {
-                updateQuery = "UPDATE [dbo].[Song] SET [Title] = '" + updateMedia.Title + "', [Singer] = '" + ((Song)updateMedia).Singer + "' " + "', [File] = '" + ("0x" + BitConverter.ToString(updateMedia.File).Replace("-", "")) + "' " +
-                              "WHERE [Id] = " + updateMedia.Id;
-            }
-
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spUpdateSong]", conn))
                     {
                         conn.Open();
 
-                        cmd.CommandText = updateQuery;
-                        cmd.Prepare();
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        updateMedia.Id = (int)cmd.ExecuteScalar();
+                        cmd.Parameters.AddWithValue("@Title", ((Song)updateMedia).Title);
+                        cmd.Parameters.AddWithValue("@Singer", ((Song)updateMedia).Singer);
+                        cmd.Parameters.AddWithValue("@Id", ((Song)updateMedia).Id);
+
+                        if (updateMedia.File != null)
+                        {
+                            cmd.Parameters.AddWithValue("@File", ((Song)updateMedia).File);
+                        }
+
+                        updateMedia.Id = (int)cmd.ExecuteNonQuery();
                     }
                 }
             }
