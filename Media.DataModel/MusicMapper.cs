@@ -118,19 +118,26 @@ namespace Media.DataModel
                 {
                     using (var cmd = new SqlCommand("[dbo].[spAddSong]", conn))
                     {
-                        conn.Open();
-
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        cmd.Parameters.AddWithValue("@Title", ((Song)newMedia).Title);
-                        cmd.Parameters.AddWithValue("@Singer", ((Song)newMedia).Singer);
-                        
-                        if (newMedia.File != null)
+                        try
                         {
-                            cmd.Parameters.AddWithValue("@File", ((Song)newMedia).File);
-                        }
+                            conn.Open();
 
-                        newMedia.Id = (int)cmd.ExecuteNonQuery();
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Title", ((Song)newMedia).Title);
+                            cmd.Parameters.AddWithValue("@Singer", ((Song)newMedia).Singer);
+
+                            if (newMedia.File != null)
+                            {
+                                cmd.Parameters.AddWithValue("@File", ((Song)newMedia).File);
+                            }
+
+                            newMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
@@ -152,20 +159,27 @@ namespace Media.DataModel
                 {
                     using (var cmd = new SqlCommand("[dbo].[spUpdateSong]", conn))
                     {
-                        conn.Open();
-
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        cmd.Parameters.AddWithValue("@Title", ((Song)updateMedia).Title);
-                        cmd.Parameters.AddWithValue("@Singer", ((Song)updateMedia).Singer);
-                        cmd.Parameters.AddWithValue("@Id", ((Song)updateMedia).Id);
-
-                        if (updateMedia.File != null)
+                        try
                         {
-                            cmd.Parameters.AddWithValue("@File", ((Song)updateMedia).File);
-                        }
+                            conn.Open();
 
-                        updateMedia.Id = (int)cmd.ExecuteNonQuery();
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                            cmd.Parameters.AddWithValue("@Title", ((Song)updateMedia).Title);
+                            cmd.Parameters.AddWithValue("@Singer", ((Song)updateMedia).Singer);
+                            cmd.Parameters.AddWithValue("@Id", ((Song)updateMedia).Id);
+
+                            if (updateMedia.File != null)
+                            {
+                                cmd.Parameters.AddWithValue("@File", ((Song)updateMedia).File);
+                            }
+
+                            updateMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
@@ -187,13 +201,20 @@ namespace Media.DataModel
                 {
                     using (var cmd = new SqlCommand("[dbo].[spDeleteSong]", conn))
                     {
-                        conn.Open();
+                        try
+                        {
+                            conn.Open();
 
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@Id", ((Song)oldMedia).Id);
+                            cmd.Parameters.AddWithValue("@Id", ((Song)oldMedia).Id);
 
-                        oldMedia.Id = (int)cmd.ExecuteNonQuery();
+                            oldMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
