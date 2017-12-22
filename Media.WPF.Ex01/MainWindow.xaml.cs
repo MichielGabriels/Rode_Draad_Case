@@ -92,7 +92,7 @@ namespace Media.WPF.Ex01
             var selectedItem = (Song)musicListBox.SelectedItem;
             var song = (Song) null;
 
-            if (selectedItem != null && selectedItem.File != null)
+            if (selectedItem != null && selectedItem.File == null)
             {
                 song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
             }
@@ -114,6 +114,8 @@ namespace Media.WPF.Ex01
 
         private void PlaylistListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            this.musicListBox.SelectedIndex = -1;
+
             var song = (Song)playlistListBox.SelectedItem;
 
             if (song != null)

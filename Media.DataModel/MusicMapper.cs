@@ -117,13 +117,13 @@ namespace Media.DataModel
             if (newMedia.File == null)
             {
                 query = "INSERT INTO [dbo].[Song] ([Title], [Singer]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "'); " +
+                        "VALUES (@Title, @Singer); " +
                         "SELECT CAST(scope_identity() AS int);";
             }
             else
             {
                 query = "INSERT INTO [dbo].[Song] ([Title], [Singer], [File]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Song)newMedia).Singer + "', 0x" + BitConverter.ToString(newMedia.File).Replace("-", "") + "); " +
+                        "VALUES (@Title, @Singer, @File); " +
                         "SELECT CAST(scope_identity() AS int);";
             }
 
@@ -131,12 +131,17 @@ namespace Media.DataModel
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand(query, conn))
                     {
                         conn.Open();
-
-                        cmd.CommandText = query;
-                        cmd.Prepare();
+                        
+                        cmd.Parameters.AddWithValue("@Title", ((Song)newMedia).Title);
+                        cmd.Parameters.AddWithValue("@Singer", ((Song)newMedia).Singer);
+                        
+                        if (newMedia.File != null)
+                        {
+                            cmd.Parameters.AddWithValue("@File", ((Song)newMedia).File);
+                        }
 
                         newMedia.Id = (int)cmd.ExecuteScalar();
                     }
