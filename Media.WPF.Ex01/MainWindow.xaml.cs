@@ -92,7 +92,7 @@ namespace Media.WPF.Ex01
             var selectedItem = (Song)musicListBox.SelectedItem;
             var song = (Song) null;
 
-            if (selectedItem != null && selectedItem.File != null)
+            if (selectedItem != null)
             {
                 song = (Song)_activeController.LoadMediaFile(selectedItem.Id);
             }
@@ -114,6 +114,8 @@ namespace Media.WPF.Ex01
 
         private void PlaylistListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            this.musicListBox.SelectedIndex = -1;
+
             var song = (Song)playlistListBox.SelectedItem;
 
             if (song != null)
@@ -132,7 +134,7 @@ namespace Media.WPF.Ex01
             var selectedItem = (Movie)movieListBox.SelectedItem;
             var movie = (Movie) null;
 
-            if (selectedItem != null && selectedItem.File != null)
+            if (selectedItem != null)
             {
                 movie = (Movie)_activeController.LoadMediaFile(selectedItem.Id);
             }
@@ -202,6 +204,8 @@ namespace Media.WPF.Ex01
                     selectedSong.Singer = textBoxSinger.Text;
                     selectedSong.Title = textBoxSongTitle.Text;
                     selectedSong.File = _newFile;
+
+                    _activeController.UpdateMedia(selectedSong);
                 }
 
                 _activeController.ClearSelected();
@@ -398,6 +402,7 @@ namespace Media.WPF.Ex01
 
             buttonDeleteSong.IsEnabled = false;
             buttonDeleteMovie.IsEnabled = false;
+            buttonAddToPlaylist.IsEnabled = false;
 
             checkBoxMusicFilePresent.IsChecked = false;
             checkBoxMovieFilePresent.IsChecked = false;
@@ -409,6 +414,11 @@ namespace Media.WPF.Ex01
         {
             textBoxSinger.Text = song.Singer;
             textBoxSongTitle.Text = song.Title;
+
+            if (song.File != null)
+            {
+                checkBoxMusicFilePresent.IsChecked = true;
+            }
 
             _musicController.ChangeSelected(song);
         }
@@ -439,6 +449,11 @@ namespace Media.WPF.Ex01
             textBoxDirector.Text = movie.Director;
             textBoxMovieTitle.Text = movie.Title;
 
+            if (movie.File != null)
+            {
+                checkBoxMovieFilePresent.IsChecked = true;
+            }
+
             _movieController.ChangeSelected(movie);
         }
 
@@ -453,14 +468,13 @@ namespace Media.WPF.Ex01
             }
             else
             {
+                movieListBox.SelectedItem = null;
+                textBoxDirector.Text = null;
+                textBoxSongTitle.Text = null;
                 buttonAddMovieFile.IsEnabled = true;
                 checkBoxMovieFilePresent.IsChecked = false;
                 buttonDeleteMovie.IsEnabled = false;
                 buttonPlayMovie.IsEnabled = false;
-
-                textBoxDirector.Text = "";
-                textBoxSongTitle.Text = "";
-                movieListBox.SelectedItem = null;
             }
         }
 
