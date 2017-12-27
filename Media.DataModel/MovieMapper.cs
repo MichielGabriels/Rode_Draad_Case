@@ -92,7 +92,10 @@ namespace Media.DataModel
 
                             int mediaFilePos = reader.GetOrdinal("File");
 
-                            movieFile = (byte[])reader[mediaFilePos];
+                            if (!reader.IsDBNull(mediaFilePos))
+                            {
+                                movieFile = (byte[])reader[mediaFilePos];
+                            }
                         }
                         finally
                         {
