@@ -112,33 +112,32 @@ namespace Media.DataModel
 
         public Media AddMedia(Media newMedia)
         {
-            string query;
-
-            if (newMedia.File == null)
-            {
-                query = "INSERT INTO [dbo].[Movie] ([Title], [Director]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Movie)newMedia).Director + "'); " +
-                        "SELECT CAST(scope_identity() AS int);";
-            }
-            else
-            {
-                query = "INSERT INTO [dbo].[Movie] ([Title], [Director], [File]) " +
-                        "VALUES ('" + newMedia.Title + "', '" + ((Movie)newMedia).Director + "', 0x" + BitConverter.ToString(newMedia.File).Replace("-", "") + "); " +
-                        "SELECT CAST(scope_identity() AS int);";
-            }
-
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spAddMovie]", conn))
                     {
-                        conn.Open();
+                        try
+                        {
+                            conn.Open();
 
-                        cmd.CommandText = query;
-                        cmd.Prepare();
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        newMedia.Id = (int)cmd.ExecuteScalar();
+                            cmd.Parameters.AddWithValue("@Title", ((Movie)newMedia).Title);
+                            cmd.Parameters.AddWithValue("@Director", ((Movie)newMedia).Director);
+
+                            if (newMedia.File != null)
+                            {
+                                cmd.Parameters.AddWithValue("@File", ((Movie)newMedia).File);
+                            }
+
+                            newMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
@@ -154,31 +153,33 @@ namespace Media.DataModel
         {
             int updateCount = 0;
 
-            string updateQuery;
-
-            if (updateMedia.File == null)
-            {
-                updateQuery = "UPDATE [dbo].[Movie] SET [Title] = '" + updateMedia.Title + "', [Director] = '" + ((Movie)updateMedia).Director + "' " +
-                              "WHERE [Id] = " + updateMedia.Id;
-            }
-            else
-            {
-                updateQuery = "UPDATE [dbo].[Movie] SET [Title] = '" + updateMedia.Title + "', [Director] = '" + ((Movie)updateMedia).Director + "' " + "', [File] = '" + ("0x" + BitConverter.ToString(updateMedia.File).Replace("-", "")) + "' " +
-                              "WHERE [Id] = " + updateMedia.Id;
-            }
-
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spUpdateMovie]", conn))
                     {
-                        conn.Open();
+                        try
+                        {
+                            conn.Open();
 
-                        cmd.CommandText = updateQuery;
-                        cmd.Prepare();
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        updateMedia.Id = (int)cmd.ExecuteScalar();
+                            cmd.Parameters.AddWithValue("@Id", ((Movie)updateMedia).Id);
+                            cmd.Parameters.AddWithValue("@Title", ((Movie)updateMedia).Title);
+                            cmd.Parameters.AddWithValue("@Director", ((Movie)updateMedia).Director);
+
+                            if (updateMedia.File != null)
+                            {
+                                cmd.Parameters.AddWithValue("@File", ((Movie)updateMedia).File);
+                            }
+
+                            updateMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
@@ -194,21 +195,26 @@ namespace Media.DataModel
         {
             int updateCount = 0;
 
-            string deleteQuery = "DELETE FROM [dbo].[Movie] " +
-                                 "WHERE Id = " + oldMedia.Id;
-
             try
             {
                 using (var conn = new SqlConnection(connectionstring))
                 {
-                    using (var cmd = new SqlCommand(null, conn))
+                    using (var cmd = new SqlCommand("[dbo].[spDeleteMovie]", conn))
                     {
-                        conn.Open();
+                        try
+                        {
+                            conn.Open();
 
-                        cmd.CommandText = deleteQuery;
-                        cmd.Prepare();
+                            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        oldMedia.Id = (int)cmd.ExecuteNonQuery();
+                            cmd.Parameters.AddWithValue("@Id", ((Movie)oldMedia).Id);
+
+                            oldMedia.Id = (int)cmd.ExecuteNonQuery();
+                        }
+                        finally
+                        {
+                            conn?.Close();
+                        }
                     }
                 }
             }
