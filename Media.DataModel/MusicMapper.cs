@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Media.DataModel
 {
@@ -125,6 +126,8 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Title", ((Song)newMedia).Title);
@@ -135,7 +138,18 @@ namespace Media.DataModel
                                 cmd.Parameters.AddWithValue("@File", ((Song)newMedia).File);
                             }
 
+                            cmd.Transaction = transaction;
+
+                            transaction.Save("BeforeAddMedia");
+
                             newMedia.Id = (int)cmd.ExecuteNonQuery();
+                            
+                            if (this.GetConfirmation(newMedia, "toevoegen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback("BeforeAddMedia");
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
@@ -227,6 +241,12 @@ namespace Media.DataModel
             }
 
             return updateCount > 0;
+        }
+
+        private MessageBoxResult GetConfirmation(Media media, String action)
+        {
+            MessageBoxResult result = MessageBox.Show($"Bent u zeker dat u de song met titel '{media.Title}' wilt {action}?", $"Song {action}", MessageBoxButton.YesNo);
+            return result;
         }
     }
 }
