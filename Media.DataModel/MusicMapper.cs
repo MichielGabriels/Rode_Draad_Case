@@ -127,6 +127,7 @@ namespace Media.DataModel
                             conn.Open();
 
                             SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "AddMediaSP";
 
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -139,13 +140,13 @@ namespace Media.DataModel
                             }
 
                             cmd.Transaction = transaction;
-                            transaction.Save("BeforeAddMedia");
+                            transaction.Save(savepoint);
 
                             newMedia.Id = (int)cmd.ExecuteNonQuery();
                             
                             if (this.GetConfirmation(newMedia, "toevoegen") == MessageBoxResult.No)
                             {
-                                transaction.Rollback("BeforeAddMedia");
+                                transaction.Rollback(savepoint);
                             }
 
                             transaction.Commit();
@@ -180,6 +181,7 @@ namespace Media.DataModel
                             conn.Open();
 
                             SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "UpdateMediaSP";
 
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -193,13 +195,13 @@ namespace Media.DataModel
                             }
 
                             cmd.Transaction = transaction;
-                            transaction.Save("BeforeUpdateMedia");
+                            transaction.Save(savepoint);
 
                             updateMedia.Id = (int)cmd.ExecuteNonQuery();
 
                             if (this.GetConfirmation(updateMedia, "wijzigen") == MessageBoxResult.No)
                             {
-                                transaction.Rollback("BeforeUpdateMedia");
+                                transaction.Rollback(savepoint);
                             }
 
                             transaction.Commit();
@@ -234,19 +236,20 @@ namespace Media.DataModel
                             conn.Open();
 
                             SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "DeleteMediaSP";
 
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Id", ((Song)oldMedia).Id);
 
                             cmd.Transaction = transaction;
-                            transaction.Save("BeforeDeleteMedia");
+                            transaction.Save(savepoint);
 
                             oldMedia.Id = (int)cmd.ExecuteNonQuery();
 
                             if (this.GetConfirmation(oldMedia, "verwijderen") == MessageBoxResult.No)
                             {
-                                transaction.Rollback("BeforeDeleteMedia");
+                                transaction.Rollback(savepoint);
                             }
 
                             transaction.Commit();

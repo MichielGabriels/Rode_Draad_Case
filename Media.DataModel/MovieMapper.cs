@@ -125,6 +125,8 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Title", ((Movie)newMedia).Title);
@@ -134,6 +136,9 @@ namespace Media.DataModel
                             {
                                 cmd.Parameters.AddWithValue("@File", ((Movie)newMedia).File);
                             }
+
+                            cmd.Transaction = transaction;
+                            transaction.Save("BeforeAddMedia");
 
                             newMedia.Id = (int)cmd.ExecuteNonQuery();
                         }
