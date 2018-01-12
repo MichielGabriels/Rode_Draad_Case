@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Media.DataModel
 {
@@ -126,6 +127,7 @@ namespace Media.DataModel
                             conn.Open();
 
                             SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "AddMediaSP";
 
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -138,9 +140,16 @@ namespace Media.DataModel
                             }
 
                             cmd.Transaction = transaction;
-                            transaction.Save("BeforeAddMedia");
+                            transaction.Save(savepoint);
 
                             newMedia.Id = (int)cmd.ExecuteNonQuery();
+
+                            if (this.GetConfirmation(newMedia, "toevoegen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback(savepoint);
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
@@ -171,6 +180,9 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "UpdateMediaSP";
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Id", ((Movie)updateMedia).Id);
@@ -182,7 +194,17 @@ namespace Media.DataModel
                                 cmd.Parameters.AddWithValue("@File", ((Movie)updateMedia).File);
                             }
 
+                            cmd.Transaction = transaction;
+                            transaction.Save(savepoint);
+
                             updateMedia.Id = (int)cmd.ExecuteNonQuery();
+
+                            if (this.GetConfirmation(updateMedia, "wijzigen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback(savepoint);
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
@@ -213,11 +235,24 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+                            String savepoint = "DeleteMediaSP";
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Id", ((Movie)oldMedia).Id);
 
+                            cmd.Transaction = transaction;
+                            transaction.Save(savepoint);
+
                             oldMedia.Id = (int)cmd.ExecuteNonQuery();
+
+                            if (this.GetConfirmation(oldMedia, "verwijderen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback(savepoint);
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
@@ -232,6 +267,12 @@ namespace Media.DataModel
             }
 
             return updateCount > 0;
+        }
+
+        private MessageBoxResult GetConfirmation(Media media, String action)
+        {
+            MessageBoxResult result = MessageBox.Show($"Bent u zeker dat u de movie met titel '{media.Title}' wilt {action}?", $"Movie {action}", MessageBoxButton.YesNo);
+            return result;
         }
     }
 }
