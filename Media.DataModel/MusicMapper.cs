@@ -180,6 +180,8 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Title", ((Song)updateMedia).Title);
@@ -191,7 +193,18 @@ namespace Media.DataModel
                                 cmd.Parameters.AddWithValue("@File", ((Song)updateMedia).File);
                             }
 
+                            cmd.Transaction = transaction;
+
+                            transaction.Save("BeforeUpdateMedia");
+
                             updateMedia.Id = (int)cmd.ExecuteNonQuery();
+
+                            if (this.GetConfirmation(updateMedia, "wijzigen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback("BeforeUpdateMedia");
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
