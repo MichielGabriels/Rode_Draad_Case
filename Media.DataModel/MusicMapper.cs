@@ -139,7 +139,6 @@ namespace Media.DataModel
                             }
 
                             cmd.Transaction = transaction;
-
                             transaction.Save("BeforeAddMedia");
 
                             newMedia.Id = (int)cmd.ExecuteNonQuery();
@@ -194,7 +193,6 @@ namespace Media.DataModel
                             }
 
                             cmd.Transaction = transaction;
-
                             transaction.Save("BeforeUpdateMedia");
 
                             updateMedia.Id = (int)cmd.ExecuteNonQuery();
@@ -235,11 +233,23 @@ namespace Media.DataModel
                         {
                             conn.Open();
 
+                            SqlTransaction transaction = conn.BeginTransaction();
+
                             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                             cmd.Parameters.AddWithValue("@Id", ((Song)oldMedia).Id);
 
+                            cmd.Transaction = transaction;
+                            transaction.Save("BeforeDeleteMedia");
+
                             oldMedia.Id = (int)cmd.ExecuteNonQuery();
+
+                            if (this.GetConfirmation(oldMedia, "verwijderen") == MessageBoxResult.No)
+                            {
+                                transaction.Rollback("BeforeDeleteMedia");
+                            }
+
+                            transaction.Commit();
                         }
                         finally
                         {
